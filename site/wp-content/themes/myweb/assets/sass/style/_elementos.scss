@@ -1,0 +1,151 @@
+strong {
+	font-weight: $bold;
+}
+
+h1 {
+	float: left;
+	margin-top: 8px;
+	max-width: $wLogo;
+	width: 100%;
+	z-index: 9999;
+	position: relative;
+	@include animacao();
+
+	a {
+		@include animacao();
+
+		img {
+			width: 100%;
+			@include animacao;
+		}
+
+		&:hover {
+			opacity: .75;
+		}
+	}
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+	font-family: $playfair;
+	font-weight: $bold;
+	font-size: 1.75rem;
+	line-height: 2.5rem;
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+p {
+	font-size: $font-size;
+	line-height: $font-size+.7;
+	font-weight: $regular;
+	margin-bottom: 20px;
+
+	&.mini {
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+	
+	@media all and (max-width: 770px){
+		font-size: 1.25rem;
+		line-height: (1.25rem)+.5;
+	}
+
+	&:last-child {
+		margin-bottom: 0px;
+	}
+}
+
+.margin-top-30 {
+	margin-top: 30px;
+}
+
+.justify-center {
+	text-align: justify;  
+	/*-moz-text-align-last: center;
+	text-align-last: center;*/
+}
+
+.justify-left {
+	text-align: justify;  
+	-moz-text-align-last: left;
+	text-align-last: left;
+}
+
+.justify {
+	text-align: justify;  
+	text-justify: inter-word;
+}
+
+.center {
+	text-align: center;
+}
+.no-margim {
+	margin: 0!important;
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;		
+	}
+}
+
+.paginacao {
+margin: 50px auto 0;
+text-align: center;
+
+	li {
+		display: inline-block;
+		margin: 0px;
+
+		span, a {
+			display: block;
+			font-size: 1.225rem;
+			font-weight: $regular;
+			line-height: 40px;
+			height: 40px;
+			padding: 0 10px;
+		}
+
+		a {
+			color: $verde;
+			@include animacao;
+
+			.fa {
+				font-size: 1.225rem;
+				font-weight: $regular;
+				color: $verde;
+			}
+
+			&:hover {
+				background-color: rgba($verde, .5);
+			}
+		}
+
+		span {
+			background-color: $verde;
+			color: #ffffff;
+		}
+	}
+}
+
+.ico-texto {
+	display: block;
+	margin: 0 auto 15px;
+	@include clear;
+}

@@ -1,0 +1,79 @@
+.nav {
+	display: table;
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	background-color: $verde;
+	z-index: 999;
+	top: -100vh;
+	left: 0;
+	@include animacao;
+
+	.box-nav {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+
+	ul {
+		width: 400px;
+		margin: 0 auto;
+
+		li {
+			padding: 0 10%;
+			text-align: left;
+
+			a {
+				font-size: 2rem;
+				line-height: 3rem;
+				color: #ffffff;
+				@include animacao;
+
+				&:hover {
+					opacity: .5;
+				}
+			}
+		}
+	}
+
+	&.active {
+		top: 0;
+	}
+
+	.menu-mobile {
+		color: #ffffff;
+
+		&.active {
+			color: #ffffff;
+
+			&:hover {
+				color: #ffffff;
+			}
+		}
+	}
+}
+
+/* menu mobile */
+.menu-mobile {
+	color: $verde;
+	//display: none;
+	z-index: 9999;
+	position: absolute;
+	cursor: pointer;
+	font-size: 2.5rem;
+	top: 18px;
+	right: 210px;
+	@include animacao;
+
+	&.active {
+		color: $cinza-escuro;
+
+		&:hover {
+			color: $cinza-escuro;
+		}
+	}
+
+	&:hover {
+		color: $cinza-escuro;
+	}
+}

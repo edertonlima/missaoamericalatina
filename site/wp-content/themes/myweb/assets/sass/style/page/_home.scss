@@ -1,0 +1,85 @@
+.sobre-home {
+
+	&.box-item-sobre {
+		margin: 0;
+
+		[class*="col-"] {
+			padding: 0;
+		}
+	}
+
+	.txt-sobre {
+		&.col8 {
+			padding-left: 60px;
+		}
+
+		h4 {
+			margin: 10px 0 20px;
+		}
+
+		.area {
+			color: $verde;
+			letter-spacing: 5px;
+			font-size: .875rem;
+			text-transform: uppercase;
+		}
+
+		p {
+			
+		}
+	}
+
+	.item-sobre {
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		overflow: hidden;
+
+		.titulo {
+			color: $verde;
+			font-family: $satisfy;
+		}
+
+		&:hover {
+			.mask-hover {
+				left: 0;
+			}
+		}
+
+		.mask-hover {
+			height: 100%;
+			display: table;
+			width: 100%;
+			text-align: center;
+			padding: 20px;
+			background-color: rgba($amarelo,0.75);
+			position: relative;
+			left: -100%;
+			@include animacao;
+
+			.box-hover {
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			h4 {
+				font-size: 4rem;
+				line-height: 4rem;
+			}
+
+			.button {
+				border: none;
+				margin-top: 10px;
+
+				&:hover {
+					background-color: transparent;
+					color: $verde;
+
+					i {
+						color: $verde;
+					}
+				}
+			}
+		}
+	}
+}
