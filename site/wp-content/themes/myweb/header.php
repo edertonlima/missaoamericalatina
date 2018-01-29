@@ -126,8 +126,8 @@
 	});	
 
 	jQuery(window).resize(function(){
-		jQuery('.menu-mobile').removeClass('active');
-		jQuery('.header').removeClass('active');
+		//jQuery('.menu-mobile').removeClass('active');
+		jQuery('.nav').removeClass('active');
 		//jQuery('.nav').css('top','-100vh');
 		if(jQuery('body').height() <= jQuery(window).height()){
 			jQuery('.footer').css({position: 'absolute', bottom: '0px'});
@@ -178,8 +178,39 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 			<i class="fa fa-bars menu-mobile" aria-hidden="true"></i>
 
 			<div class="logo-mevam">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logotipo-mevam.png">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/mevam.png">
 			</div>
+
+			<nav class="nav">
+				<div class="box-nav">
+					<ul>
+						<li>
+							<a href="javascript:" title="">SOBRE</a>
+						</li>
+
+						<li>
+							<a href="javascript:" title="">PROJETOS</a>
+						</li>
+
+						<li>
+							<a href="javascript:" title="">TREINAMENTOS</a>
+						</li>
+
+						<li>
+							<a href="javascript:" title="">IGREJAS PARCEIRAS</a>
+						</li>
+
+						<li>
+							<a href="javascript:" title="">ENVOLVA-SE</a>
+						</li>
+
+						<li>
+							<a href="javascript:" title="">LOJA</a>
+						</li>
+					</ul>		
+				</div>
+				<i class="fa fa-times menu-mobile active" aria-hidden="true"></i>
+			</nav>
 		</div>
 
 		<nav class="nav" style="display: none;">
@@ -266,34 +297,3 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		</nav>
 
 	</header>
-
-	<nav class="nav">
-		<div class="box-nav">
-			<ul>
-				<li>
-					<a href="javascript:" title="">SOBRE</a>
-				</li>
-
-				<li>
-					<a href="javascript:" title="">PROJETOS</a>
-				</li>
-
-				<li>
-					<a href="javascript:" title="">TREINAMENTOS</a>
-				</li>
-
-				<li>
-					<a href="javascript:" title="">IGREJAS PARCEIRAS</a>
-				</li>
-
-				<li>
-					<a href="javascript:" title="">ENVOLVA-SE</a>
-				</li>
-
-				<li>
-					<a href="javascript:" title="">LOJA</a>
-				</li>
-			</ul>		
-		</div>
-		<i class="fa fa-times menu-mobile active" aria-hidden="true"></i>
-	</nav>

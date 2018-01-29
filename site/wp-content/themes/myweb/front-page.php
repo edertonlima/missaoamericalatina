@@ -74,9 +74,9 @@
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/inhouse2-intro.png" class="col-4">
 			<div class="col-8 txt-sobre">
 				<span class="area">Sobre</span>
-				<h4>Jennifer Aster is an interior designer based in Paris who designs, designs and decorates living spaces and private or public spaces for private and professional sponsors.</h4>
-				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-				<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
+				<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida mattis fermentum. Cras imperdiet libero in tincidunt sodales. Sed placerat laoreet magna.</h4>
+				<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus ut lorem eu nibh ultricies laoreet.</p>
+				<p>Morbi eu varius lorem, non dapibus quam. Ut at varius magna. Nunc velit est, molestie id orci et, mollis fringilla erat. Proin sapien erat, tristique vel auctor volutpat, ornare in turpis.</p>
 				<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 			</div>
 		</div>
@@ -84,43 +84,148 @@
 	</div>
 </section>
 
-<section class="box-content no-padding-top">
+<section class="box-content no-padding">
 
 	<div class="sobre-home box-item-sobre row">
-		<div class="col-3 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg');">
+		<div class="col-3 item-sobre active" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg');" rel="#finalidade">
 			<div class="mask-hover">
 				<div class="box-hover">
 					<h4 class="titulo">Finalidade</h4>
-					<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
 				</div>
 			</div>
 		</div>
-		<div class="col-3 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img3.jpg');">
+		<div class="col-3 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img3.jpg');" rel="#visao">
 			<div class="mask-hover">
 				<div class="box-hover">
 					<h4 class="titulo">Visão</h4>
-					<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
 				</div>
 			</div>
 		</div>
-		<div class="col-3 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img4.jpg');">
+		<div class="col-3 item-sobre " style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img4.jpg');" rel="#objetivos">
 			<div class="mask-hover">
 				<div class="box-hover">
 					<h4 class="titulo">Objetivos</h4>
-					<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
 				</div>
 			</div>
 		</div>
-		<div class="col-3 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img5.jpg');">
+		<div class="col-3 item-sobre " style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/peru_lima_highlight.jpg');" rel="#igrejas-parceiras">
 			<div class="mask-hover">
 				<div class="box-hover">
 					<h4 class="titulo">Igrejas Parceiras</h4>
-					<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
 				</div>
 			</div>
 		</div>
 	</div>
 
+</section>
+
+<section class="box-content sobre-home item-sobre-content active" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/Afbeelding-ANNE-086.jpg');" id="finalidade">
+	<div class="mask-content-item">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-4">&nbsp;</div>
+				<div class="col-8 txt-sobre">
+					<span class="area">Finalidade</span>
+					<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida mattis fermentum. Cras imperdiet libero in tincidunt sodales. Sed placerat laoreet magna.</h4>
+					<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus ut lorem eu nibh ultricies laoreet.</p>
+					<p>Morbi eu varius lorem, non dapibus quam. Ut at varius magna. Nunc velit est, molestie id orci et, mollis fringilla erat. Proin sapien erat, tristique vel auctor volutpat, ornare in turpis.</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<section class="box-content sobre-home item-sobre-content" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/c176acf764c928d66a7af017aa03d66d.jpg');" id="visao">
+	<div class="mask-content-item">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-4">&nbsp;</div>
+				<div class="col-8 txt-sobre">
+					<span class="area">Visão</span>
+					<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida mattis fermentum. Cras imperdiet libero in tincidunt sodales. Sed placerat laoreet magna.</h4>
+					<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus ut lorem eu nibh ultricies laoreet.</p>
+					<p>Morbi eu varius lorem, non dapibus quam. Ut at varius magna. Nunc velit est, molestie id orci et, mollis fringilla erat. Proin sapien erat, tristique vel auctor volutpat, ornare in turpis.</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<section class="box-content sobre-home item-sobre-content " style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/Peru-slide-F3GM-superJumbo.jpg');" id="objetivos">
+	<div class="mask-content-item">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-4">&nbsp;</div>
+				<div class="col-8 txt-sobre">
+					<span class="area">Objetivos</span>
+					<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida mattis fermentum. Cras imperdiet libero in tincidunt sodales. Sed placerat laoreet magna.</h4>
+					<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus ut lorem eu nibh ultricies laoreet.</p>
+					<p>Morbi eu varius lorem, non dapibus quam. Ut at varius magna. Nunc velit est, molestie id orci et, mollis fringilla erat. Proin sapien erat, tristique vel auctor volutpat, ornare in turpis.</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<section class="box-content sobre-home item-sobre-content " style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/peru_lima_highlight.jpg');" id="igrejas-parceiras">
+	<div class="mask-content-item">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-12 txt-sobre igrejas-parceiras">
+					<h4 class="titulo">Igrejas Parceiras</h4>
+
+					<div class="owl-carousel owl-theme list-igrejas">
+
+						<div class="item">
+							<a href="javascript:">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
+							</a>
+						</div>
+
+						<div class="item">
+							<a href="javascript:">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
+							</a>
+						</div>
+
+						<div class="item">
+							<a href="javascript:">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
+							</a>
+						</div>
+
+						<div class="item">
+							<a href="javascript:">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
+							</a>
+						</div>
+
+						<div class="item">
+							<a href="javascript:">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
+							</a>
+						</div>
+
+					</div>
+
+					<a href="javascript:" class="button">seja uma igreja parceira <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
 </section>
 
 <?php get_footer(); ?>
@@ -130,6 +235,15 @@
 		jQuery('.item-sobre').each(function(){
 			jQuery(this).height(jQuery(this).width());
 		});
+
+		jQuery('.item-sobre').click(function(){
+			jQuery('.item-sobre').removeClass('active');
+			jQuery(this).addClass('active');
+			jQuery('.item-sobre-content').removeClass('active');
+			jQuery(jQuery(this).attr('rel')).addClass('active');
+
+			jQuery('html, body').animate({scrollTop:jQuery(jQuery(this).attr('rel')).position().top}, 'slow');
+		});
 	});
 
 	jQuery(window).resize(function(){
@@ -137,6 +251,31 @@
 			jQuery(this).height(jQuery(this).width());
 		});
 	});
+</script>
+
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/owl.carousel.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	jQuery('.list-igrejas').owlCarousel({
+		loop: false,
+		center: false,
+		nav: true,
+		margin: 20,
+		navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+		responsive: {
+			0: {
+				items: 2
+			},
+			400: {
+				items: 2
+			},
+			500: {
+				items: 3
+			},
+			768: {
+				items: 4
+			}
+		}
+	}) 
 </script>
 
 <?php /*
