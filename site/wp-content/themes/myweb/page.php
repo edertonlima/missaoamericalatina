@@ -2,87 +2,81 @@
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<section class="box-content img-destaque header-page" style="background-image: url('<?php the_field('imagem_block') ?>');">
-			<div class="mask"><div class="container"></div></div>
+		<section class="box-content no-padding img-destaque header-page no-height" style="background-image: url('<?php the_field('imagem_block') ?>');">
+			<div class="mask"><div class="container"><div><span><?php the_title(); ?></span></div></div></div>
 		</section>
 
-		<?php /*
-			$imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '' ); 
-			if($imagem[0]){ ?>
-				<section class="box-content img-destaque" style="background-image: url('<?php echo $imagem[0]; ?>');"></section>
-			<?php }*/
-		?>
-
-		<section class="box-content cinza">
+		<section class="box-content no-height verde">
 			<div class="container">
 				
 				<div class="content-post">
 
 					<div class="row">
-						<div class="col-12">
-							<h2 class="center"><?php the_title(); ?></h2>
-							<h4 class="center"><?php the_field('subtitulo'); ?></h4>
+						<div class="col-4">
+							<?php $imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' ); ?>
+							<img src="<?php echo $imagem[0]; ?>" class="img-ico-cont">
+						</div>
+
+						<div class="col-8">
+							<h2 class=""><?php the_title(); ?></h2>
+							<h4 class=""><?php the_field('subtitulo'); ?></h4>
+							<?php the_excerpt(); ?>
 						</div>
 					</div>
-					<?php the_content(); ?>
-
 				</div>
 
 			</div>
 		</section>
 
-
-		<?php
-			if(is_page('sobre')){
-				if(get_field('texto_desenvolvimento')){ ?>
-					<section class="box-content">
-						<div class="container">
-							
-							<h3>DESENVOLVIMENTO</h3>
-							<div class="content-post cont-box ico-cont">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/lo_ecomais_icones-15.png" class="img-ico-cont">
-								<p class="justify"><?php the_field('texto_desenvolvimento'); ?></p>
-							</div>
-
+		<section class="box-content no-height amarelo">
+			<div class="container">
+				
+				<div class="content-post">
+					<div class="row">
+						<div class="col-12 justify">
+							<?php the_content(); ?>
 						</div>
-					</section>
-				<?php } 
-
-				if(have_rows('comprometimento')): ?>
-					<section class="box-content">
-						<div class="container">
-							
-							<h3>Comprometimento</h3>
-							<div class="content-post cont-box">
-								<ul class="comprometimento row">
-									<?php while ( have_rows('comprometimento') ) : the_row(); ?>
-
-										<li class="col-4">
-											<img src="<?php the_sub_field('imagem'); ?>" class="" alt="<?php the_sub_field('titulo'); ?>"/>
-											<span><?php the_sub_field('titulo'); ?></span>
-										</li>
-
-									<?php endwhile; ?>
-								</ul>
-							</div>
-
-						</div>
-					</section>
-				<?php endif; 
-			} 
-		?>
-
-		<?php if(get_field('imagem_descricao')){ ?>
-			<section class="box-content">
-				<div class="container">
-					
-					<div class="content-post">
-						<img src="<?php the_field('imagem_descricao'); ?>" class="img-content">
 					</div>
-
 				</div>
-			</section>
-		<?php } ?>
+
+			</div>
+		</section>
+
+		<?php //if(is_page('sobre')){
+			if(have_rows('item_sobre')): ?>
+
+				<section class="box-content no-height">
+					<div class="container">
+						
+						<div class="content-post">
+							<div class="row">
+
+								<?php while ( have_rows('item_sobre') ) : the_row(); ?>
+
+									<?php $imagem = get_sub_field('imagem'); ?>
+
+									<div class="sobre-home row" id="<?php the_sub_field('titulo'); ?>">
+										<div class="col-4">
+											<img src="<?php echo $imagem['sizes']['thumbnail']; ?>">
+										</div>
+										
+										<div class="col-8 txt-sobre">
+											<h2><?php the_sub_field('titulo'); ?></h2>
+											<h4><?php the_sub_field('subtitulo'); ?></h4>
+											<p><?php the_sub_field('texto'); ?></p>
+										</div>
+									</div>
+
+								<?php endwhile; ?>
+
+							</div>
+						</div>
+
+					</div>
+				</section>
+
+			<?php endif;
+		//} ?>
 
 		<script type="text/javascript">
 			jQuery(window).load(function(){
