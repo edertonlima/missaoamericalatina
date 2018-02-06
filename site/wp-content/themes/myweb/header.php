@@ -95,6 +95,8 @@
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap.min.js"></script>
 
+<!--<script defer src="<?php echo get_template_directory_uri(); ?>/assets/js/fontawesome-all.js"></script>-->
+
 
 <script type="text/javascript">
 	jQuery.noConflict();
@@ -185,23 +187,23 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<div class="box-nav">
 					<ul>
 						<li>
-							<a href="javascript:" title="">SOBRE</a>
+							<a href="<?php echo get_home_url(); ?>/#ancor-sobre" title="">SOBRE</a>
 						</li>
 
 						<li>
-							<a href="javascript:" title="">PROJETOS</a>
+							<a href="<?php echo get_home_url(); ?>/#projetos" title="">PROJETOS</a>
 						</li>
 
 						<li>
-							<a href="javascript:" title="">TREINAMENTOS</a>
+							<a href="<?php echo get_home_url(); ?>/#treinamentos" title="">TREINAMENTOS</a>
 						</li>
 
 						<li>
-							<a href="javascript:" title="">IGREJAS PARCEIRAS</a>
+							<a href="<?php echo get_home_url(); ?>/#igrejas-parceiras" title="">IGREJAS PARCEIRAS</a>
 						</li>
 
 						<li>
-							<a href="javascript:" title="">ENVOLVA-SE</a>
+							<a href="<?php echo get_home_url(); ?>/#envolva-se" title="">ENVOLVA-SE</a>
 						</li>
 
 						<li>

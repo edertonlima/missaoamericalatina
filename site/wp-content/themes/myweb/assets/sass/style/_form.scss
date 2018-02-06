@@ -2,15 +2,6 @@ form {
 	width: 100%;
 	@include clear();
 
-	.obs {
-		font-size: .9rem;
-		line-height: .9rem;
-		font-style: italic;
-		font-weight: $light;
-		margin-bottom: 20px;
-		display: block;
-	}
-
 	input, textarea {
 		max-width: 100%;
 		width: 100%;
@@ -18,10 +9,13 @@ form {
 		font-size: .8rem;
 		color: $cor-txt;
 		margin-bottom: 15px;
+		border: 1px solid $cinza-escuro;
+		font-weight: $light;
 
-		@include placeholder{
-			opacity: 1;
+		@include placeholder {
+			opacity: .8;
 			color: $cor-txt;
+			font-weight: $light;
 		}
 	}
 
@@ -34,13 +28,9 @@ form {
 
 	textarea {
 		padding: 10px;
-		height: 180px;
+		height: 100px;
 		resize: vertical;
 		@include box-sizing;
-	}
-
-	fieldset {
-		
 	}
 }
 
@@ -104,6 +94,19 @@ input[type='submit'], .button {
 
 		i {
 			color: #ffffff;
+		}
+	}
+
+	&.enviar {
+		background-color: $verde;
+		color: #ffffff;
+
+		i {
+			color: #ffffff;
+		}
+
+		&:hover {
+			background-color: darken($verde, 10%);
 		}
 	}
 }
@@ -175,10 +178,14 @@ input::-webkit-input-placeholder {
     opacity: 0;
 }
 */
+
 .msg-form {
 	text-align: center;
 	font-size: 1rem;
 	line-height: 1.225rem;
-	padding: 0 !important;
-	width: 100%;
+	margin: 0;
+
+	&.erro, &.ok {
+		margin-bottom: 15px;
+	}
 }

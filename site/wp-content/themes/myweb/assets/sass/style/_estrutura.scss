@@ -66,7 +66,7 @@ body * {
 
 	[class*="col-"] {
 		float: left;
-		@include box-sizing();
+		@include box-sizing;
 
 		img {
 			max-width: 100%;
@@ -95,6 +95,19 @@ body * {
 	width: 100%;
 	position: relative;
 	padding: 100px 0;
+	@include box-sizing;
+
+	&:not(.no-height) {
+		min-height: 100vh;
+
+		.mask {
+			min-height: 100vh;
+		}
+	}
+
+	&.box-mensagem {
+		padding: 30px 0;
+	}
 
 	&.box-slide {
 		position: relative;
@@ -112,5 +125,23 @@ body * {
 
 	&.no-padding-bottom {
 		padding-bottom: 0;
+	}
+
+	&.cinza {
+		background-color: $cinza;
+	}
+
+	&.amarelo {
+		background-color: rgba($amarelo,0.3);
+	}
+}
+
+.table {
+	height: 100%;
+	display: table;
+
+	.table-cell {
+		display: table-cell;
+		vertical-align: middle;
 	}
 }

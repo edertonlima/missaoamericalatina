@@ -1,0 +1,53 @@
+.projetos {
+	.list-projeto {
+
+		.col-12 {
+			margin-bottom: 50px;
+		}
+
+		.col-6 {
+			height: 40vh;
+		}
+
+		.item-proj {
+			&:nth-child(odd) {
+				text-align: right;
+				@include clear;
+			}
+		}
+
+		.img-projeto {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center; 
+			position: relative;
+
+			i {
+				position: absolute;
+				color: $amarelo;
+				font-size: 9rem;
+				top: 50%;
+				margin: -72px 0 0 -72px;
+				left: 50%;
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+
+		iframe {
+			display: none;
+			padding: 0!important;
+		}
+
+		.cont-proj {
+			background-color: rgba($amarelo,0.75);
+			display: table;
+
+			.box-cont-proj {
+				padding: 50px;
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+	}
+}

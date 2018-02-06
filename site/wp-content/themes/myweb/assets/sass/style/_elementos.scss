@@ -26,7 +26,10 @@ h1 {
 }
 
 h2 {
-
+	color: $verde;
+	letter-spacing: 5px;
+	font-size: .875rem;
+	text-transform: uppercase;
 }
 
 h3 {
@@ -41,7 +44,6 @@ h4 {
 }
 
 h5 {
-
 }
 
 h6 {
@@ -57,6 +59,19 @@ p {
 	&.mini {
 		font-size: 1rem;
 		line-height: 1.25rem;
+	}
+
+	&.destaque {
+		font-size: 1.5rem;
+		line-height: 1.8rem;
+		font-weight: $light;
+	}
+
+	&.destaque-mini {
+		font-size: .875rem;
+		line-height: 1rem;
+		max-width: 510px;
+		margin: 0 auto;
 	}
 	
 	@media all and (max-width: 770px){
@@ -102,6 +117,13 @@ a {
 
 	&:hover {
 		text-decoration: none;		
+	}
+}
+
+img {
+	&.center {
+		margin: 20px auto;
+		display: block;
 	}
 }
 

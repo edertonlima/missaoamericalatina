@@ -14,10 +14,9 @@
 
 /* PAGES */
 @import 'style/page/_home';
-//@import 'style/page/_sobre';
-//@import 'style/page/_contato';
-//@import 'style/page/_post';
-//@import 'style/page/_produtos';
-//@import 'style/page/_representantes'; 
-//@import 'style/page/_churrascometro'; 
+@import 'style/page/_projetos';
+@import 'style/page/_treinamentos';
+@import 'style/page/_page';
 //@import 'style/_mobile'; 
+
+@import 'owl.carousel.min.css';

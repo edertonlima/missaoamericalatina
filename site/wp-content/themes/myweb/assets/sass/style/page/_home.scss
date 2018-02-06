@@ -1,8 +1,26 @@
+
+.sobre {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	.mask {
+		background-color: rgba($amarelo,0.5);
+		height: 100vh;
+
+		.table {
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+	}
+}
+
 .sobre-home {
+	padding: 20px;
+	margin: 0;
+	background-color: rgba(#ffffff,0.75);
 
 	&.box-item-sobre {
-		margin: 0;
-
 		[class*="col-"] {
 			padding: 0;
 		}
@@ -15,13 +33,6 @@
 
 		h4 {
 			margin: 10px 0 20px;
-		}
-
-		.area {
-			color: $verde;
-			letter-spacing: 5px;
-			font-size: .875rem;
-			text-transform: uppercase;
 		}
 
 		p {
@@ -51,17 +62,20 @@
 		.mask-hover {
 			height: 100%;
 			display: table;
-			width: 100%;
+			width: 101%;
 			text-align: center;
 			padding: 20px;
 			background-color: rgba($amarelo,0.75);
 			position: relative;
 			left: -100%;
+			overflow: hidden;
 			@include animacao;
 
 			.box-hover {
 				display: table-cell;
 				vertical-align: middle;
+				position: relative;
+				left: -1%;
 			}
 
 			h4 {
@@ -99,13 +113,59 @@
 			}
 		}
 	}
+
+	&.item-mini {
+		.item-sobre {
+			.mask-hover {
+				left: 0;
+			}
+
+			h4 {
+				font-size: 3rem;
+				line-height: 2rem;
+				color: #000;
+			}
+
+			&:hover {
+				.mask-hover {
+					background-color: rgba($amarelo,0.85);
+
+					.box-hover {
+						h4 {
+							color: $verde;
+						}
+					}
+				}
+			}
+
+			&.active {
+				h4 {
+					color: $verde;
+				}
+				.mask-hover {
+					background-color: rgba($amarelo,1);
+				}
+				.button {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&.sobre-btn-det {
+		display: none;
+		padding: 100px 30px;
+
+		&.active {
+			display: block;
+		}
+	}
 }
 
 .item-sobre-content {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	border-bottom: 10px solid $verde;
 	display: none;
 
 	&.active {
@@ -113,7 +173,9 @@
 	}
 
 	.mask-content-item {
-		//background-color: rgba($amarelo,0.9);
+		background-color: rgba($amarelo,0.3);
+		height: 100vh;
+
 		.txt-sobre {
 			background-color: rgba($amarelo,0.75);
 			padding: 40px;
@@ -204,5 +266,72 @@
 				}
 			}
 		}
+	}
+}
+
+#ancor-sobre {
+	position: relative;
+	top: -200px;
+	z-index: 0;
+	width: 10px;
+	height: 10px;
+	background-color: red;
+}
+
+.envolva-se {
+	.container {
+		max-width: 95%; 
+	}
+
+	.table {
+		height: 100vh;
+		margin: 0;
+	}
+
+	.item-sobre {
+		&:not(.active){
+			height: 30vh;
+		}
+
+		&.active {
+			height: 60vh;
+		}
+
+		.mask-hover {
+			width: 100%;
+			left: 0;
+			background-color: rgba($amarelo,0.75);
+
+			h4 {
+				color: #000
+			}
+		}
+
+		&:hover {
+			.mask-hover {
+				background-color: rgba($amarelo,0.9);
+
+				h4 {
+					color: $verde;
+				}
+			}
+		}
+	}
+
+	p {
+		padding: 10px 20px;
+	}	
+}
+
+#igrejas-parceiras {
+	display: block;
+	margin-top: 50px;
+
+	.mask-content-item {
+		background-color: rgba($amarelo,0.75);
+	}
+
+	.txt-sobre {
+		background-color: rgba(#ffffff,0.75);
 	}
 }

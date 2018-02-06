@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- slide -->
-<section class="box-content box-slide">
+<section class="box-content box-slide no-height">
 	<div class="slide">
 		<div class="carousel slide" data-ride="carousel" data-interval="6000" id="slide">
 
@@ -19,7 +19,7 @@
 									<source src="<?php echo get_template_directory_uri(); ?>/assets/images/video2.mp4<?php //the_sub_field('video'); ?>" type="video/mp4">
 								</video>
 								<div class="mask-slide">
-									<div class="box-slide-txt">
+									<div class="box-slide-txt" style="display: none;">
 										<span class="titulo">
 											Arrependei-vos porque é chegado o reino dos céus
 											<span>Mateus 4:17</span>
@@ -67,187 +67,352 @@
 	</div>
 </section>
 
-<section class="box-content">
+
+
+<section class="box-content box-mensagem no-height">
 	<div class="container">
 		
-		<div class="sobre-home row">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/inhouse2-intro.png" class="col-4">
-			<div class="col-8 txt-sobre">
-				<span class="area">Sobre</span>
-				<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida mattis fermentum. Cras imperdiet libero in tincidunt sodales. Sed placerat laoreet magna.</h4>
-				<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus ut lorem eu nibh ultricies laoreet.</p>
-				<p>Morbi eu varius lorem, non dapibus quam. Ut at varius magna. Nunc velit est, molestie id orci et, mollis fringilla erat. Proin sapien erat, tristique vel auctor volutpat, ornare in turpis.</p>
-				<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+		<div class="row list-projeto">
+			<div class="col-12">
+				<h2 class="center">Mateus 4:17</h2>
+				<h4 class="center">Arrependei-vos porque é chegado o reino dos céus</h4>
 			</div>
-		</div>
-
-	</div>
-</section>
-
-<section class="box-content no-padding">
-
-	<div class="sobre-home box-item-sobre row">
-		<div class="col-3 item-sobre active" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg');" rel="#finalidade">
-			<div class="mask-hover">
-				<div class="box-hover">
-					<h4 class="titulo">Finalidade</h4>
-					<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
-				</div>
-			</div>
-		</div>
-		<div class="col-3 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img3.jpg');" rel="#visao">
-			<div class="mask-hover">
-				<div class="box-hover">
-					<h4 class="titulo">Visão</h4>
-					<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
-				</div>
-			</div>
-		</div>
-		<div class="col-3 item-sobre " style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img4.jpg');" rel="#objetivos">
-			<div class="mask-hover">
-				<div class="box-hover">
-					<h4 class="titulo">Objetivos</h4>
-					<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
-				</div>
-			</div>
-		</div>
-		<div class="col-3 item-sobre " style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/peru_lima_highlight.jpg');" rel="#igrejas-parceiras">
-			<div class="mask-hover">
-				<div class="box-hover">
-					<h4 class="titulo">Igrejas Parceiras</h4>
-					<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
-				</div>
-			</div>
-		</div>
-	</div>
-
-</section>
-
-<section class="box-content sobre-home item-sobre-content active" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/Afbeelding-ANNE-086.jpg');" id="finalidade">
-	<div class="mask-content-item">
-		<div class="container">
-			
-			<div class="row">
-				<div class="col-4">&nbsp;</div>
-				<div class="col-8 txt-sobre">
-					<span class="area">Finalidade</span>
-					<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida mattis fermentum. Cras imperdiet libero in tincidunt sodales. Sed placerat laoreet magna.</h4>
-					<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus ut lorem eu nibh ultricies laoreet.</p>
-					<p>Morbi eu varius lorem, non dapibus quam. Ut at varius magna. Nunc velit est, molestie id orci et, mollis fringilla erat. Proin sapien erat, tristique vel auctor volutpat, ornare in turpis.</p>
-				</div>
-			</div>
-
 		</div>
 	</div>
 </section>
 
-<section class="box-content sobre-home item-sobre-content" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/c176acf764c928d66a7af017aa03d66d.jpg');" id="visao">
-	<div class="mask-content-item">
-		<div class="container">
-			
-			<div class="row">
-				<div class="col-4">&nbsp;</div>
-				<div class="col-8 txt-sobre">
-					<span class="area">Visão</span>
-					<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida mattis fermentum. Cras imperdiet libero in tincidunt sodales. Sed placerat laoreet magna.</h4>
-					<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus ut lorem eu nibh ultricies laoreet.</p>
-					<p>Morbi eu varius lorem, non dapibus quam. Ut at varius magna. Nunc velit est, molestie id orci et, mollis fringilla erat. Proin sapien erat, tristique vel auctor volutpat, ornare in turpis.</p>
-				</div>
-			</div>
+<section class="box-content no-padding sobre" style="background-image: url('<?php the_field('imagem_block',get_page_by_path('sobre')); ?>');">
+	<div class="mask">
+		<div class="container table">
+			<div class="table-cell">
 
-		</div>
-	</div>
-</section>
+				<a href="javascript:" id="ancor-sobre"></a>
 
-<section class="box-content sobre-home item-sobre-content " style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/Peru-slide-F3GM-superJumbo.jpg');" id="objetivos">
-	<div class="mask-content-item">
-		<div class="container">
-			
-			<div class="row">
-				<div class="col-4">&nbsp;</div>
-				<div class="col-8 txt-sobre">
-					<span class="area">Objetivos</span>
-					<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida mattis fermentum. Cras imperdiet libero in tincidunt sodales. Sed placerat laoreet magna.</h4>
-					<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus ut lorem eu nibh ultricies laoreet.</p>
-					<p>Morbi eu varius lorem, non dapibus quam. Ut at varius magna. Nunc velit est, molestie id orci et, mollis fringilla erat. Proin sapien erat, tristique vel auctor volutpat, ornare in turpis.</p>
-				</div>
-			</div>
+				<div class="sobre-home box-item-sobre item-mini row">
 
-		</div>
-	</div>
-</section>
-
-<section class="box-content sobre-home item-sobre-content " style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/peru_lima_highlight.jpg');" id="igrejas-parceiras">
-	<div class="mask-content-item">
-		<div class="container">
-			
-			<div class="row">
-				<div class="col-12 txt-sobre igrejas-parceiras">
-					<h4 class="titulo">Igrejas Parceiras</h4>
-
-					<div class="owl-carousel owl-theme list-igrejas">
-
-						<div class="item">
-							<a href="javascript:">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
-							</a>
+					<?php $imagem = wp_get_attachment_image_src( get_post_thumbnail_id(get_page_by_path('sobre')), 'large' ); ?>
+					<div class="col-3 item-sobre item-sobre-h active" style="background-image: url('<?php if($imagem[0]){ echo $imagem[0]; } ?>');" rel="#sobre">
+						<div class="mask-hover">
+							<div class="box-hover">
+								<h4 class="titulo"><?php echo get_the_title(get_page_by_path('sobre')); ?></h4>
+								<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+							</div>
 						</div>
-
-						<div class="item">
-							<a href="javascript:">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
-							</a>
-						</div>
-
-						<div class="item">
-							<a href="javascript:">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
-							</a>
-						</div>
-
-						<div class="item">
-							<a href="javascript:">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
-							</a>
-						</div>
-
-						<div class="item">
-							<a href="javascript:">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
-							</a>
-						</div>
-
 					</div>
 
-					<a href="javascript:" class="button">seja uma igreja parceira <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
+					<?php if(have_rows('item_sobre',get_page_by_path('sobre'))): ?>
+						<?php while ( have_rows('item_sobre',get_page_by_path('sobre')) ) : the_row(); ?>
+
+							<?php $imagem = get_sub_field('imagem'); ?>
+
+							<div class="col-3 item-sobre item-sobre-h" style="background-image: url('<?php echo $imagem['sizes']['large']; ?>');" rel="#<?php the_sub_field('titulo'); ?>">
+								<div class="mask-hover">
+									<div class="box-hover">
+										<h4 class="titulo"><?php the_sub_field('titulo'); ?></h4>
+										<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+									</div>
+								</div>
+							</div>
+
+						<?php endwhile; ?>
+					<?php endif; ?>
+
+				</div>
+				
+				<div class="sobre-home sobre-btn-det row active" id="sobre">
+					<?php 
+						$imagem = wp_get_attachment_image_src( get_post_thumbnail_id(get_page_by_path('sobre')), 'thumbnail' ); 
+						if($imagem[0]){ ?>
+							<div class="col-4">
+								<img src="<?php echo $imagem[0]; ?>">
+							</div>
+						<?php }
+					?>					
+					<div class="<?php if($imagem[0]){ echo 'col-8'; }else{ echo 'col-12'; } ?> txt-sobre">
+						<h2><?php echo get_the_title(get_page_by_path('sobre')); ?></h2>
+						<?php if(get_field('subtitulo',get_page_by_path('sobre'))){ ?>
+							<h4><?php the_field('subtitulo',get_page_by_path('sobre')); ?></h4>
+						<?php } ?>
+						<?php if(get_the_excerpt(get_page_by_path('sobre'))){ ?>
+							<p><?php echo get_the_excerpt(get_page_by_path('sobre')); ?></p>
+						<?php } ?>
+						<a href="<?php echo get_permalink(get_page_by_path('sobre')); ?>" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					</div>
+				</div>
+
+				<?php if(have_rows('item_sobre',get_page_by_path('sobre'))): ?>
+					<?php while ( have_rows('item_sobre',get_page_by_path('sobre')) ) : the_row(); ?>
+
+						<?php $imagem = get_sub_field('imagem'); ?>
+
+						<div class="sobre-home sobre-btn-det row" id="<?php the_sub_field('titulo'); ?>">
+							<div class="col-4">
+								<img src="<?php echo $imagem['sizes']['thumbnail']; ?>">
+							</div>
+							
+							<div class="col-8 txt-sobre">
+								<h2><?php the_sub_field('titulo'); ?></h2>
+								<h4><?php the_sub_field('subtitulo'); ?></h4>
+								<p><?php the_sub_field('texto'); ?></p>
+							</div>
+						</div>
+
+					<?php endwhile; ?>
+				<?php endif; ?>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="box-content projetos" id="projetos">
+	<div class="container">
+		
+		<div class="row list-projeto">
+			<div class="col-12">
+				<h2 class="center">Projetos</h2>
+				<h4 class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Aenean gravida mattis fermentum.</h4>
+			</div>
+
+			<div class="item-proj">
+				<iframe class="col-6 img-projeto" src="https://www.youtube.com/embed/7suPXnzQ770" frameborder="0" encrypted-media" allowfullscreen></iframe>
+				<div class="col-6 img-projeto" style="background-image: url('https://img.youtube.com/vi/7suPXnzQ770/maxresdefault.jpg');">
+					<i class="fa fa-youtube-play" aria-hidden="true"></i>
+				</div>
+				<div class="col-6 cont-proj">
+					<div class="box-cont-proj">
+						<h2 class="">Projetos</h2>
+						<h4 class="">Lorem ipsum dolor sit amet</h4>
+						<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus.</p>
+						<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item-proj">
+				<div class="col-6 cont-proj">
+					<div class="box-cont-proj">
+						<h2 class="">Projetos</h2>
+						<h4 class="">Lorem ipsum dolor sit amet</h4>
+						<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus.</p>
+						<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					</div>
+				</div>
+				<div class="col-6 img-projeto" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/proj-2.jpg');"></div>
+			</div>
+
+			<div class="item-proj">
+				<div class="col-6 img-projeto" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/proj-3.jpg');"></div>
+				<div class="col-6 cont-proj">
+					<div class="box-cont-proj">
+						<h2 class="">Projetos</h2>
+						<h4 class="">Lorem ipsum dolor sit amet</h4>
+						<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus.</p>
+						<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<div class="owl-carousel owl-theme list-treinamentos" id="treinamentos">
+	<div class="item">
+
+		<section class="box-content no-padding treinamentos" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img5.jpg');">
+			<div class="box-treinamentos">
+				<div class="">
+					
+					<div class="row">
+						<div class="col-12" style="display: none;">
+							<h2 class="center">Treinamentos</h2>
+							<h4 class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Aenean gravida mattis fermentum.</h4>
+						</div>
+
+						<div class="slide-treinamento">
+							<div class="middle-treinamento row">
+
+									<div class="item-slide-treinamentos">
+										<a href="javascript:" class="col-6 ">
+											<iframe class="img-treinamentos" src="https://www.youtube.com/embed/7suPXnzQ770" frameborder="0" encrypted-media" allowfullscreen></iframe>
+											<div class="img-treinamentos" style="background-image: url('https://img.youtube.com/vi/7suPXnzQ770/maxresdefault.jpg');">
+												<i class="fa fa-youtube-play" aria-hidden="true"></i>
+											</div>
+										</a>
+
+										<div class="col-6 cont-treinamentos">
+											<div class="table">
+												<div class="table-cell">
+													<h2 class="">Treinamentos</h2>
+													<a href="javascript:"><h4 class="">Lorem ipsum dolor sit amet</h4></a>
+													<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus.</p>
+													<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+												</div>
+											</div>
+										</div>						
+									</div>
+								
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+</div>
+
+
+<section class="box-content no-padding sobre-home item-sobre-content active" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img5.jpg');" id="igrejas-parceiras">
+
+	<div class="mask-content-item">
+		
+
+			<div class="table">
+				<div class="table-cell">
+					
+					<div class="container">
+					<div class= "row">
+						<div class="col-12 txt-sobre igrejas-parceiras">
+							<h4 class="titulo">Igrejas Parceiras</h4>
+
+							<div class="owl-carousel owl-theme list-igrejas">
+
+								<div class="item">
+									<a href="javascript:">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="javascript:">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="javascript:">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="javascript:">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
+									</a>
+								</div>
+
+								<div class="item">
+									<a href="javascript:">
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
+									</a>
+								</div>
+
+							</div>
+
+							<a href="javascript:" class="button">seja uma igreja parceira <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
+
+						</div>
+						</div>
+					</div>
 
 				</div>
 			</div>
 
-		</div>
+		
 	</div>
 </section>
+
+
+<section class="box-content no-padding envolva-se">
+
+			<div class="table">
+				<div class="table-cell" id="envolva-se">
+
+	<div class="container">
+		<div class="sobre-home box-item-sobre row">
+			<div class="col-5 item-sobre active">
+				<div class="mask-hover">
+					<div class="box-hover">
+						<h4 class="titulo">Envolva-se</h4>
+						<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus.
+					</div>
+				</div>
+			</div>
+			<div class="col-7">
+				<div class="col-6 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg');">
+					<div class="mask-hover">
+						<div class="box-hover">
+							<h4 class="titulo">Ore</h4>
+							<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg');">
+					<div class="mask-hover">
+						<div class="box-hover">
+							<h4 class="titulo">Oferte</h4>
+							<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg');">
+					<div class="mask-hover">
+						<div class="box-hover">
+							<h4 class="titulo">Ide</h4>
+							<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg');">
+					<div class="mask-hover">
+						<div class="box-hover">
+							<h4 class="titulo">Mobilize</h4>
+							<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
+
+</section>
+
+
 
 <?php get_footer(); ?>
 
 <script type="text/javascript">
 	jQuery(document).ready(function(){	
-		jQuery('.item-sobre').each(function(){
+		jQuery('.item-sobre-h').each(function(){
 			jQuery(this).height(jQuery(this).width());
 		});
 
-		jQuery('.item-sobre').click(function(){
-			jQuery('.item-sobre').removeClass('active');
+		jQuery('.item-sobre-h').click(function(){
+			jQuery('.item-sobre-h').removeClass('active');
 			jQuery(this).addClass('active');
-			jQuery('.item-sobre-content').removeClass('active');
+			jQuery('.sobre-btn-det').removeClass('active');
 			jQuery(jQuery(this).attr('rel')).addClass('active');
 
-			jQuery('html, body').animate({scrollTop:jQuery(jQuery(this).attr('rel')).position().top}, 'slow');
+			//jQuery('html, body').animate({scrollTop:jQuery(jQuery(this).attr('rel')).position().top}, 'slow');
+			//jQuery('html, body').animate({scrollTop:jQuery('#ancor-sobre').position().top}, 'slow');
+		});
+
+		jQuery('.fa-youtube-play').click(function(){
+			jQuery('.item-sobre-h').removeClass('active');
+			jQuery(this).parent().hide();
+			jQuery(this).parent().siblings().show().attr('src', jQuery(this).parent().siblings().attr('src') + '?autoplay=1');
 		});
 	});
 
 	jQuery(window).resize(function(){
-		jQuery('.item-sobre').each(function(){
+		jQuery('.item-sobre-h').each(function(){
 			jQuery(this).height(jQuery(this).width());
 		});
 	});
@@ -273,6 +438,19 @@
 			},
 			768: {
 				items: 4
+			}
+		}
+	});
+
+	jQuery('#treinamentos').owlCarousel({
+		loop: false,
+		center: false,
+		nav: true,
+		margin: 20,
+		navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+		responsive: {
+			0: {
+				items: 1
 			}
 		}
 	}) 

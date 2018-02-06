@@ -2,35 +2,35 @@
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<section class="box-content img-destaque header-page" style="background-image: url('<?php the_field('imagem_block') ?>');">
-			<div class="mask"><div class="container"></div></div>
+		<section class="box-content no-padding">
+			<h2>
+				<div class="container">
+					<img src="<?php the_field('ico_preto'); ?>">
+					<span><?php the_title(); ?></span>
+				</div>
+			</h2>
 		</section>
 
-		<?php /*
+		<?php 
 			$imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '' ); 
 			if($imagem[0]){ ?>
 				<section class="box-content img-destaque" style="background-image: url('<?php echo $imagem[0]; ?>');"></section>
-			<?php }*/
+			<?php }
 		?>
 
-		<section class="box-content cinza">
-			<div class="container">
-				
-				<div class="content-post">
-
-					<div class="row">
-						<div class="col-12">
-							<h2 class="center"><?php the_title(); ?></h2>
-							<h4 class="center"><?php the_field('subtitulo'); ?></h4>
+		<?php 
+			if(get_the_content()){ ?>
+				<section class="box-content cinza">
+					<div class="container">
+						
+						<div class="content-post">
+							<?php the_content(); ?>
 						</div>
+
 					</div>
-					<?php the_content(); ?>
-
-				</div>
-
-			</div>
-		</section>
-
+				</section>
+			<?php }
+		?>
 
 		<?php
 			if(is_page('sobre')){
