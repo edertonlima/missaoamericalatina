@@ -115,6 +115,10 @@
 			}
 		});
 
+		jQuery('.nav a').click(function(){
+			jQuery('.nav').removeClass('active');
+		});
+
 		if(jQuery('body').height() <= jQuery(window).height()){
 			jQuery('.footer').css({position: 'absolute', bottom: '0px'});
 		}else{
@@ -187,7 +191,11 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<div class="box-nav">
 					<ul>
 						<li>
-							<a href="<?php echo get_home_url(); ?>/#ancor-sobre" title="">SOBRE</a>
+							<?php if(is_home()){ ?>
+								<a href="#ancor-sobre" title="">SOBRE</a>
+							<?php }else{ ?>
+								<a href="<?php echo get_home_url(); ?>/sobre" title="">SOBRE</a>
+							<?php } ?>
 						</li>
 
 						<li>

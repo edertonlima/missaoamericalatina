@@ -204,7 +204,8 @@
 						text-align: center;
 						img {
 							display: inline-block;
-							height: 100px;
+							max-height: 100px;
+							width: auto;
 						}
 					}
 					.owl-dots {

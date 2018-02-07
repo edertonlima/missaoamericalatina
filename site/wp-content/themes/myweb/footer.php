@@ -162,6 +162,7 @@
 <script type="text/javascript">
 	jQuery(document).ready(function(){
 
+		/*
 		jQuery('.contato-foto').height(jQuery('.contato-info').height());
 
 		// FORM
@@ -204,23 +205,11 @@
 				});
 			}
 		});
-
-		jQuery('input').change(function(){
-			if(jQuery(this).parent().hasClass('erro')){
-				jQuery(this).parent().removeClass('erro');
-			}
-		});
-
-		jQuery('textarea').change(function(){
-			if(jQuery(this).parent().hasClass('erro')){
-				jQuery(this).parent().removeClass('erro');
-			}
-		});
-		
+		*/		
 	});
 
 	jQuery(window).resize(function(){
-		jQuery('.contato-contato').height(jQuery('.contato-info').height());
+		//jQuery('.contato-contato').height(jQuery('.contato-info').height());
 	});
 
 </script>

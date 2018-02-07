@@ -117,17 +117,17 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'configuracoes-geral',
 	));
 
-	/*acf_add_options_sub_page(array(
-		'page_title' 	=> 'Músicas',
-		'menu_title'	=> 'Músicas',
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Igrejas Parceiras',
+		'menu_title'	=> 'Igrejas Parceiras',
 		'parent_slug'	=> 'configuracoes-geral',
 	));
 
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Produtos',
-		'menu_title'	=> 'Produtos',
+		'page_title' 	=> 'Envolva-se',
+		'menu_title'	=> 'Envolva-se',
 		'parent_slug'	=> 'configuracoes-geral',
-	));*/
+	));
 }
 
 /* PAGINAÇÃO */

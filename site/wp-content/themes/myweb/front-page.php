@@ -170,105 +170,128 @@
 		
 		<div class="row list-projeto">
 			<div class="col-12">
-				<h2 class="center">Projetos</h2>
-				<h4 class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Aenean gravida mattis fermentum.</h4>
+				<h2 class="center"><?php echo get_category_by_slug( 'projetos' )->name; ?></h2>
+				<h4 class="center"><?php echo get_category_by_slug( 'projetos' )->category_description; ?></h4>
 			</div>
 
-			<div class="item-proj">
-				<iframe class="col-6 img-projeto" src="https://www.youtube.com/embed/7suPXnzQ770" frameborder="0" encrypted-media" allowfullscreen></iframe>
-				<div class="col-6 img-projeto" style="background-image: url('https://img.youtube.com/vi/7suPXnzQ770/maxresdefault.jpg');">
-					<i class="fa fa-youtube-play" aria-hidden="true"></i>
-				</div>
-				<div class="col-6 cont-proj">
-					<div class="box-cont-proj">
-						<h2 class="">Projetos</h2>
-						<h4 class="">Lorem ipsum dolor sit amet</h4>
-						<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus.</p>
-						<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-			</div>
 
-			<div class="item-proj">
-				<div class="col-6 cont-proj">
-					<div class="box-cont-proj">
-						<h2 class="">Projetos</h2>
-						<h4 class="">Lorem ipsum dolor sit amet</h4>
-						<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus.</p>
-						<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="col-6 img-projeto" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/proj-2.jpg');"></div>
-			</div>
+			<?php
+				query_posts(
+					array(
+						'post_type' => 'post',
+						'cat' => get_category_by_slug( 'projetos' )->term_id
+					)
+				);
 
-			<div class="item-proj">
-				<div class="col-6 img-projeto" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/proj-3.jpg');"></div>
-				<div class="col-6 cont-proj">
-					<div class="box-cont-proj">
-						<h2 class="">Projetos</h2>
-						<h4 class="">Lorem ipsum dolor sit amet</h4>
-						<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus.</p>
-						<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+				while ( have_posts() ) : the_post(); ?>
+
+					<div class="item-proj">
+						<?php 
+							if(get_field('video')){ ?>
+
+								<iframe class="col-6 img-projeto" src="https://www.youtube.com/embed/7suPXnzQ770" frameborder="0" encrypted-media" allowfullscreen></iframe>
+								<div class="col-6 img-projeto" style="background-image: url('https://img.youtube.com/vi/7suPXnzQ770/maxresdefault.jpg');">
+									<i class="fa fa-youtube-play" aria-hidden="true"></i>
+								</div>
+
+							<?php }else{
+
+								$imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+								if($imagem[0]){ ?>
+									<div class="col-6 img-projeto" style="background-image: url('<?php echo $imagem[0]; ?>');"></div>
+								<?php }
+
+							}					
+						?>
+						<div class="col-6 cont-proj">
+							<div class="box-cont-proj">
+								<h2 class=""><?php echo get_category_by_slug( 'projetos' )->name; ?></h2>
+								<h4 class=""><?php the_title(); ?></h4>
+								<?php the_excerpt(); ?>
+								<a href="<?php the_permalink(); ?>" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
+
+				<?php endwhile;
+				wp_reset_query();
+			?>
 		</div>
 
 	</div>
 </section>
 
 <div class="owl-carousel owl-theme list-treinamentos" id="treinamentos">
-	<div class="item">
 
-		<section class="box-content no-padding treinamentos" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img5.jpg');">
-			<div class="box-treinamentos">
-				<div class="">
-					
-					<div class="row">
-						<div class="col-12" style="display: none;">
-							<h2 class="center">Treinamentos</h2>
-							<h4 class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Aenean gravida mattis fermentum.</h4>
-						</div>
+	<?php
+		query_posts(
+			array(
+				'post_type' => 'post',
+				'cat' => get_category_by_slug( 'treinamentos' )->term_id
+			)
+		);
 
-						<div class="slide-treinamento">
-							<div class="middle-treinamento row">
+		while ( have_posts() ) : the_post();
+		?>
 
-									<div class="item-slide-treinamentos">
-										<a href="javascript:" class="col-6 ">
-											<iframe class="img-treinamentos" src="https://www.youtube.com/embed/7suPXnzQ770" frameborder="0" encrypted-media" allowfullscreen></iframe>
-											<div class="img-treinamentos" style="background-image: url('https://img.youtube.com/vi/7suPXnzQ770/maxresdefault.jpg');">
-												<i class="fa fa-youtube-play" aria-hidden="true"></i>
-											</div>
-										</a>
+			<section class="item box-content no-padding treinamentos" style="background-image: url('<?php the_field('imagem_block'); ?>');">
+				<div class="box-treinamentos">
+					<div class="">
+						
+						<div class="row">
+							<div class="slide-treinamento">
+								<div class="middle-treinamento row">
 
-										<div class="col-6 cont-treinamentos">
-											<div class="table">
-												<div class="table-cell">
-													<h2 class="">Treinamentos</h2>
-													<a href="javascript:"><h4 class="">Lorem ipsum dolor sit amet</h4></a>
-													<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus.</p>
-													<a href="javascript:" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+										<div class="item-slide-treinamentos">
+
+						<?php 
+							if(get_field('video')){ ?>
+
+								<iframe class="col-6 img-treinamentos" src="https://www.youtube.com/embed/7suPXnzQ770" frameborder="0" encrypted-media" allowfullscreen></iframe>
+								<div class="col-6 img-treinamentos" style="background-image: url('https://img.youtube.com/vi/7suPXnzQ770/maxresdefault.jpg');">
+									<i class="fa fa-youtube-play" aria-hidden="true"></i>
+								</div>
+
+							<?php }else{
+
+								$imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+								if($imagem[0]){ ?>
+									<div class="col-6 img-treinamentos" style="background-image: url('<?php echo $imagem[0]; ?>');"></div>
+								<?php }
+
+							}					
+						?>
+
+											<div class="col-6 cont-treinamentos">
+												<div class="table">
+													<div class="table-cell">
+														<h2 class=""><?php echo get_category_by_slug( 'treinamentos' )->name; ?></h2>
+														<a href="javascript:"><h4 class=""><?php the_title(); ?></h4></a>
+														<?php the_excerpt(); ?>
+														<a href="<?php the_permalink(); ?>" class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+													</div>
 												</div>
-											</div>
-										</div>						
-									</div>
-								
+											</div>						
+										</div>
+									
 
+								</div>
 							</div>
 						</div>
+
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-	</div>
+		<?php endwhile; 
+		wp_reset_query();
+	?>
+
 </div>
 
-
-<section class="box-content no-padding sobre-home item-sobre-content active" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img5.jpg');" id="igrejas-parceiras">
-
-	<div class="mask-content-item">
-		
+<?php if(have_rows('igrejas','option')): ?>
+	<section class="box-content no-padding sobre-home item-sobre-content active" style="background-image: url('<?php the_field('imagem_bloco_igrejas','option'); ?>');" id="igrejas-parceiras">
+		<div class="mask-content-item">		
 
 			<div class="table">
 				<div class="table-cell">
@@ -280,39 +303,19 @@
 
 							<div class="owl-carousel owl-theme list-igrejas">
 
-								<div class="item">
-									<a href="javascript:">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
-									</a>
-								</div>
+								<?php while ( have_rows('igrejas','option') ) : the_row(); ?>
 
-								<div class="item">
-									<a href="javascript:">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
-									</a>
-								</div>
+									<div class="item">
+										<a href="<?php the_sub_field('url'); ?>" target="_blank">
+											<img src="<?php the_sub_field('imagem'); ?>" alt="">
+										</a>
+									</div>
 
-								<div class="item">
-									<a href="javascript:">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
-									</a>
-								</div>
-
-								<div class="item">
-									<a href="javascript:">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
-									</a>
-								</div>
-
-								<div class="item">
-									<a href="javascript:">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/igreja.gif" alt="">
-									</a>
-								</div>
+								<?php endwhile; ?>
 
 							</div>
 
-							<a href="javascript:" class="button">seja uma igreja parceira <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
+							<a href="javascript:" class="button modal-igrejas-parceiras">seja uma igreja parceira <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
 
 						</div>
 						</div>
@@ -321,75 +324,172 @@
 				</div>
 			</div>
 
-		
-	</div>
-</section>
-
+		</div>
+	</section>
+<?php endif; ?>
 
 <section class="box-content no-padding envolva-se">
 
-			<div class="table">
-				<div class="table-cell" id="envolva-se">
+	<div class="table">
+		<div class="table-cell" id="envolva-se">
 
-	<div class="container">
-		<div class="sobre-home box-item-sobre row">
-			<div class="col-5 item-sobre active">
-				<div class="mask-hover">
-					<div class="box-hover">
-						<h4 class="titulo">Envolva-se</h4>
-						<p>Phasellus sapien massa, efficitur id posuere at, aliquam nec nunc. Vestibulum ante ipsum primis in faucibus orci luctus.
+			<div class="container">
+				<div class="sobre-home box-item-sobre row">
+					<div class="col-5 item-sobre active">
+						<div class="mask-hover">
+							<div class="box-hover">
+								<h4 class="titulo">Envolva-se</h4>
+								<p><?php the_field('texto_envolva-se','option'); ?>
+							</div>
+						</div>
+					</div>
+					<div class="col-7">
+						<a href="<?php echo get_permalink(get_page_by_path('ore')); ?>" class="col-6 item-sobre" style="background-image: url('<?php the_field('imagem_block',get_page_by_path('ore')); ?>');">
+							<div class="mask-hover">
+								<div class="box-hover">
+									<h4 class="titulo"><?php echo get_the_title(get_page_by_path('ore')); ?></h4>
+									<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+								</div>
+							</div>
+						</a>
+						<a href="<?php echo get_permalink(get_page_by_path('oferte')); ?>" class="col-6 item-sobre" style="background-image: url('<?php the_field('imagem_block',get_page_by_path('oferte')); ?>');">
+							<div class="mask-hover">
+								<div class="box-hover">
+									<h4 class="titulo"><?php echo get_the_title(get_page_by_path('oferte')); ?></h4>
+									<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+								</div>
+							</div>
+						</a>
+
+						<a href="<?php echo get_permalink(get_page_by_path('ide')); ?>" class="col-6 item-sobre" style="background-image: url('<?php the_field('imagem_block',get_page_by_path('ide')); ?>');">
+							<div class="mask-hover">
+								<div class="box-hover">
+									<h4 class="titulo"><?php echo get_the_title(get_page_by_path('ide')); ?></h4>
+									<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+								</div>
+							</div>
+						</a>
+						<a href="<?php echo get_permalink(get_page_by_path('mobilize')); ?>" class="col-6 item-sobre" style="background-image: url('<?php the_field('imagem_block',get_page_by_path('mobilize')); ?>');">
+							<div class="mask-hover">
+								<div class="box-hover">
+									<h4 class="titulo"><?php echo get_the_title(get_page_by_path('mobilize')); ?></h4>
+									<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+								</div>
+							</div>
+						</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-7">
-				<div class="col-6 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg');">
-					<div class="mask-hover">
-						<div class="box-hover">
-							<h4 class="titulo">Ore</h4>
-							<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-6 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg');">
-					<div class="mask-hover">
-						<div class="box-hover">
-							<h4 class="titulo">Oferte</h4>
-							<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
-						</div>
-					</div>
-				</div>
 
-				<div class="col-6 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg');">
-					<div class="mask-hover">
-						<div class="box-hover">
-							<h4 class="titulo">Ide</h4>
-							<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-6 item-sobre" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img1.jpg');">
-					<div class="mask-hover">
-						<div class="box-hover">
-							<h4 class="titulo">Mobilize</h4>
-							<span class="button">saiba mais <i class="fa fa-angle-right" aria-hidden="true"></i></span>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 
-</div>
-</div>
-
 </section>
 
+
+<div class="bg-modal" id="modal-igrejas-parceiras">
+	<div class="box-modal">
+		<div class="modal-conteudo">
+
+			<i class="fa fa-times close-modal" aria-hidden="true"></i>
+			<h2>Desejo ser uma igreja parceira!</h2>
+
+			<form id="form-igrejas-parceiras">
+				<fieldset>
+					<input type="text" name="nome_igrejas" id="nome_igrejas" placeholder="Nome *">
+				</fieldset>
+
+				<fieldset>
+					<input type="text" name="email_igrejas" id="email_igrejas" placeholder="E-mail *">
+				</fieldset>
+
+				<fieldset>
+					<input type="text" class="telefone" name="telefone_igrejas" id="telefone_igrejas" placeholder="DDD + telefone *">
+				</fieldset>
+
+				<fieldset>
+					<p class="msg msg-form center erro"></p>
+					<button class="button btn-igreja">ENVIAR</button>
+				</fieldset>
+			</form>
+
+		</div>
+	</div>
+</div>
 
 
 <?php get_footer(); ?>
 
 <script type="text/javascript">
 	jQuery(document).ready(function(){	
+
+		jQuery('.modal-igrejas-parceiras').click(function(){
+			jQuery('#modal-igrejas-parceiras').css('display','table');
+		});
+
+		jQuery('.close-modal').click(function(){
+			jQuery(this).parents('.bg-modal').hide();
+			jQuery('.msg').html('');
+		});
+
+		jQuery('#form-igrejas-parceiras').submit(function(event){
+			jQuery('form#form-igrejas-parceiras .btn-igreja').html('ENVIANDO').prop( "disabled", true );
+			jQuery('#modal-orcamento .msg').removeClass('erro ok').html('');
+			var nome = jQuery('#nome_igrejas').val();
+			var email = jQuery('#email_igrejas').val();
+			var telefone = jQuery('#telefone_igrejas').val();
+			var para = '<?php the_field('email', 'option'); ?>';
+			var nome_site = '<?php the_field('titulo', 'option'); ?>';
+
+			var enviar = true;
+			if(nome == ''){
+				jQuery('#nome_igrejas').parent().addClass('erro');
+				enviar = false;
+			}
+
+			if(email == ''){
+				jQuery('#email_igrejas').parent().addClass('erro');
+				enviar = false;
+			}
+
+			if(telefone == ''){
+				jQuery('#telefone_igrejas').parent().addClass('erro');
+				enviar = false;
+			}
+
+			if(enviar){
+				jQuery.getJSON("<?php echo get_template_directory_uri(); ?>/mail-igrejas.php", { nome:nome, email:email, telefone:telefone,para:para, nome_site:nome_site }, function(result){		
+					if(result=='ok'){
+						resultado = 'Pedido de cadastro enviado com sucesso! Obrigado.';
+						classe = 'ok';
+					}else{
+						resultado = result;
+						classe = 'erro';
+					}
+					jQuery('#modal-igrejas-parceiras .msg').addClass(classe).html(resultado);
+					jQuery('form#form-igrejas-parceiras').trigger("reset");
+					jQuery('form#form-igrejas-parceiras .btn-igreja').html('ENVIAR').prop( "disabled", false );
+				});
+			}else{
+				jQuery('#modal-igrejas-parceiras .msg').addClass('erro').html('Todos os campos são obrigatórios.');
+				jQuery('form#form-igrejas-parceiras .btn-igreja').html('ENVIAR').prop( "disabled", false );
+			}
+
+			return false;
+		});
+
+		jQuery('input').change(function(){
+			if(jQuery(this).parent().hasClass('erro')){
+				jQuery(this).parent().removeClass('erro');
+			}
+		});
+
+		jQuery('textarea').change(function(){
+			if(jQuery(this).parent().hasClass('erro')){
+				jQuery(this).parent().removeClass('erro');
+			}
+		});
+
 		jQuery('.item-sobre-h').each(function(){
 			jQuery(this).height(jQuery(this).width());
 		});
@@ -456,429 +556,9 @@
 	}) 
 </script>
 
-<?php /*
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/maskedinput.js"></script>
 <script type="text/javascript">
-	jQuery(document).ready(function(){	  
-
-		// FORM
-		jQuery(".enviar").click(function(){
-			jQuery('.enviar').html('ENVIANDO').prop( "disabled", true );
-			jQuery('.msg-form').removeClass('erro ok').html('');
-			var nome = jQuery('#nome').val();
-			var email = jQuery('#email').val();
-			var telefone = jQuery('#telefone').val();
-			var assunto = jQuery('#assunto').val();
-			var mensagem = jQuery('#texto').val();
-			var para = '<?php get_field('email', 'option'); ?>';
-			var nome_site = '<?php get_field('titulo', 'option'); ?>';
-
-			if(email!=''){
-				jQuery.getJSON("<?php echo get_template_directory_uri(); ?>/mail.php", { nome:nome, email:email, telefone:telefone, assunto:assunto, mensagem:mensagem, para:para, nome_site:nome_site }, function(result){		
-					if(result=='ok'){
-						resultado = 'Enviado com sucesso! Obrigado.';
-						classe = 'ok';
-					}else{
-						resultado = result;
-						classe = 'erro';
-					}
-					jQuery('.msg-form').addClass(classe).html(resultado);
-					jQuery('form').trigger("reset");
-					jQuery('.enviar').html('CADASTRAR').prop( "disabled", false );
-				});
-			}else{
-				jQuery('.msg-form').addClass('erro').html('Por favor, digite um e-mail válido.');
-				jQuery('.enviar').html('CADASTRAR').prop( "disabled", false );
-			}
-		});
-		
+	jQuery(function($){
+	   jQuery(".telefone").mask("(99) 9999-9999?9");
 	});
-
 </script>
-
-<script type="text/javascript">
-	<?php 
-		foreach ($tipos as $value) {
-			echo 'var '.$value.' = '. json_encode($representantes[$value]).';';
-		}
-
-		echo 'var repre_estados = '. json_encode($repre_estados).';';
-		echo 'var lojas_estados = '. json_encode($lojas_estados).';';
-	?>
-
-	jQuery('form.login').submit(function(event){
-
-		jQuery('.enviar').html('Enviando').prop( "disabled", true );
-		jQuery('.msg-form').removeClass('erro ok').html('');
-
-		var usuario = jQuery('#usuario').val();
-		var senha = jQuery('#senha').val();		
-
-		var enviar = true;
-
-		if(usuario == ''){
-			jQuery('#usuario').parent().addClass('erro');
-			enviar = false;
-		}
-
-		if(senha == ''){
-			jQuery('#senha').parent().addClass('erro');
-			enviar = false;
-		}
-
-		if(!enviar){
-			jQuery('.msg-form').html('Todos os campos são obrigatórios.');
-			jQuery('.enviar').html('Entrar').prop( "disabled", false );
-			return false;
-		}else{
-			jQuery('.enviar').html('Enviar').prop( "disabled", false );
-			//event.preventDefault();
-		}		
-		
-	});
-
-	var val_estado_map = '';
-	var val_estado = '';
-	var list_representantes = '';
-	var val_tipo = '';
-	
-	function monta_estados(tipo){
-		var estados = new Array();
-		if(tipo == 'representantes'){
-			jQuery.each(repre_estados, function (key, val) {
-				estados.push({'nome':val.nome, 'uf':val.uf});
-			});
-		}
-		if(tipo == 'lojas'){
-			jQuery.each(lojas_estados, function (key, val) {
-				estados.push({'nome':val.nome, 'uf':val.uf});
-			});
-		}
-		estados = estados.filter(function(elem, pos, self) {
-			return self.indexOf(elem) == pos;
-		});
-
-		estado = '<option value="Selecione um Estado">Selecione um Estado</option>';
-		jQuery.each(estados, function (key, val) {
-			estado += '<option value="' + val.uf + '">' + val.nome + '</option>';
-		});
-		jQuery("#estado").html(estado);
-	}
-
-	jQuery(document).ready(function(){
-
-		monta_estados(jQuery('#tipo option:selected').val());
-
-		jQuery("#tipo").change(function(){
-			
-			jQuery('#cidade').html('<option value="Selecione uma Cidade">Selecione uma Cidade</option>').prop('disabled', true);
-			//jQuery("#estado").val('Selecione um Estado').change();
-			jQuery('.list-representantes').html('');
-
-			monta_estados(jQuery(this).val());
-
-			jQuery(".map li a").removeClass('active');
-			jQuery(".map").hide();
-			jQuery('.on-'+jQuery(this).val()).show();
-		}).change();
-
-		jQuery("#estado").change(function(){
-			jQuery(".map li a").removeClass('active');
-			var cidade = '<option value="Selecione uma Cidade">Selecione uma Cidade</option>';
-			var cidades = [];
-			val_estado = jQuery('#estado option:selected').val();			
-			val_tipo = jQuery('#tipo option:selected').val();
-
-			if(val_estado != val_estado_map){
-				if(val_estado != 'Selecione um Estado'){
-
-					// MONTA SELECT CIDADES
-					if(val_tipo == 'lojas'){
-						jQuery.each(lojas, function (key, val) {
-							if((val.uf == val_estado) && (val_tipo == val.categoria.toLowerCase())) {
-								cidades.push(val.cidade);
-							}
-						});
-					}
-					if(val_tipo == 'representantes'){
-						jQuery.each(representantes, function (key, val) {
-							if((val.uf == val_estado) && (val_tipo == val.categoria.toLowerCase())) {
-								cidades.push(val.cidade);
-							}
-						});
-					}
-					cidades = cidades.filter(function(elem, pos, self) {
-						return self.indexOf(elem) == pos;
-					});
-					jQuery.each(cidades, function (key, val) {
-						cidade += '<option value="' + val + '">' + val + '</option>';
-					});
-					jQuery("#cidade").html(cidade).prop('disabled', false);
-					// MONTA SELECT CIDADES
-
-					jQuery('.list-representantes').html('');
-					jQuery('.map li a').removeClass('active');
-					jQuery('.map li a.'+val_estado).addClass('active');
-					list_representantes = '';
-					
-					if(val_tipo == 'representantes'){
-						jQuery.each(representantes, function (key, val) {
-							if((val.uf == val_estado) && (val.categoria.toLowerCase() == val_tipo)) {
-								list_representantes += '<li>';
-								list_representantes += '<h3>'+val.nome+'</h3><div class="content-txt">';
-
-								if(val.email != ''){
-									list_representantes += '<span class="email"><strong>E-mail</strong>'+val.email+'</span>'
-								}
-
-								if(val.telefone != ''){
-									list_representantes += '<span><strong>Telefone</strong>'+val.telefone+'</span>'
-								}
-
-								if(val.celular != ''){
-									list_representantes += '<span><strong>Celular</strong>'+val.celular+'</span>'
-								}
-
-								if(val.endereco != ''){
-									list_representantes += '<span><strong>Endereço</strong>'+val.endereco+', '+val.numero+', '+val.bairro+'</span>'
-								}
-
-								if(val.cidade != ''){
-									list_representantes += '<span><strong>Cidade</strong>'+val.cidade+', '+val.estado+'</span>'
-								}
-
-								list_representantes += '</div></li>';
-							}
-						});
-					}
-
-					if(val_tipo == 'lojas'){
-						jQuery.each(lojas, function (key, val) {
-							if((val.uf == val_estado) && (val.categoria.toLowerCase() == val_tipo)) {
-								list_representantes += '<li>';
-								list_representantes += '<h3>'+val.nome+'</h3><div class="content-txt">';
-
-								if(val.email != ''){
-									list_representantes += '<span class="email"><strong>E-mail</strong>'+val.email+'</span>'
-								}
-
-								if(val.telefone != ''){
-									list_representantes += '<span><strong>Telefone</strong>'+val.telefone+'</span>'
-								}
-
-								if(val.celular != ''){
-									list_representantes += '<span><strong>Celular</strong>'+val.celular+'</span>'
-								}
-
-								if(val.endereco != ''){
-									list_representantes += '<span><strong>Endereço</strong>'+val.endereco+', '+val.numero+', '+val.bairro+'</span>'
-								}
-
-								if(val.cidade != ''){
-									list_representantes += '<span><strong>Cidade</strong>'+val.cidade+', '+val.estado+'</span>'
-								}
-
-								list_representantes += '</div></li>';
-							}
-						});
-					}
-				}
-				jQuery('.list-representantes').html(list_representantes);
-			}
-		}).change();
-
-		jQuery("#cidade").change(function(){
-			val_cidade = jQuery('#cidade option:selected').val();
-			val_estado = jQuery('#estado option:selected').val();
-			val_tipo = jQuery('#tipo option:selected').val();
-			list_representantes = '';
-			
-			if(val_tipo == 'representantes'){
-				if(val_cidade != 'Selecione uma Cidade'){
-					jQuery.each(representantes, function (key, val) {
-						if((val.uf == val_estado) && (val.cidade == val_cidade) && (val.categoria.toLowerCase() == val_tipo)) {
-							list_representantes += '<li>';
-							list_representantes += '<h3>'+val.nome+'</h3><div class="content-txt">';
-
-							if(val.email != ''){
-								list_representantes += '<span class="email"><strong>E-mail</strong>'+val.email+'</span>'
-							}
-
-							if(val.telefone != ''){
-								list_representantes += '<span><strong>Telefone</strong>'+val.telefone+'</span>'
-							}
-
-							if(val.celular != ''){
-								list_representantes += '<span><strong>Celular</strong>'+val.celular+'</span>'
-							}
-
-							if(val.endereco != ''){
-								list_representantes += '<span><strong>Endereço</strong>'+val.endereco+', '+val.numero+', '+val.bairro+'</span>'
-							}
-
-							if(val.cidade != ''){
-								list_representantes += '<span><strong>Cidade</strong>'+val.cidade+', '+val.estado+'</span>'
-							}
-
-							list_representantes += '</div></li>';
-						}
-					});
-				}
-			}
-
-			if(val_tipo == 'lojas'){
-				if(val_cidade != 'Selecione uma Cidade'){
-					jQuery.each(lojas, function (key, val) {
-						if((val.uf == val_estado) && (val.cidade == val_cidade) && (val.categoria.toLowerCase() == val_tipo)) {
-							list_representantes += '<li>';
-							list_representantes += '<h3>'+val.nome+'</h3><div class="content-txt">';
-
-							if(val.email != ''){
-								list_representantes += '<span class="email"><strong>E-mail</strong>'+val.email+'</span>'
-							}
-
-							if(val.telefone != ''){
-								list_representantes += '<span><strong>Telefone</strong>'+val.telefone+'</span>'
-							}
-
-							if(val.celular != ''){
-								list_representantes += '<span><strong>Celular</strong>'+val.celular+'</span>'
-							}
-
-							if(val.endereco != ''){
-								list_representantes += '<span><strong>Endereço</strong>'+val.endereco+', '+val.numero+', '+val.bairro+'</span>'
-							}
-
-							if(val.cidade != ''){
-								list_representantes += '<span><strong>Cidade</strong>'+val.cidade+', '+val.estado+'</span>'
-							}
-
-							list_representantes += '</div></li>';
-						}
-					});
-				}
-			}
-
-			jQuery('.list-representantes').html(list_representantes);
-		}).change();
-		
-
-		jQuery(".map li a").click(function(){
-			jQuery('.list-representantes').html('');
-
-			var cidade = '<option value="Selecione uma Cidade">Selecione uma Cidade</option>';
-			var cidades = [];
-
-			val_estado_map = jQuery(this).attr('rel');
-			val_tipo = jQuery('#tipo option:selected').val();
-			list_representantes = '';
-
-			if(val_estado != val_estado_map){
-				if(val_estado_map != ''){
-
-					// MONTA SELECT CIDADES
-					if(val_tipo == 'lojas'){
-						jQuery.each(lojas, function (key, val) {
-							if((val.uf == val_estado_map) && (val_tipo == val.categoria.toLowerCase())) {
-								cidades.push(val.cidade);
-							}
-						});
-					}
-					if(val_tipo == 'representantes'){
-						jQuery.each(representantes, function (key, val) {
-							if((val.uf == val_estado_map) && (val_tipo == val.categoria.toLowerCase())) {
-								cidades.push(val.cidade);
-							}
-						});
-					}
-					cidades = cidades.filter(function(elem, pos, self) {
-						return self.indexOf(elem) == pos;
-					});
-					jQuery.each(cidades, function (key, val) {
-						cidade += '<option value="' + val + '">' + val + '</option>';
-					});
-					jQuery("#cidade").html(cidade).prop('disabled', false);
-					// MONTA SELECT CIDADES
-
-					jQuery("#estado").val(val_estado_map).change();
-
-					list_representantes = '';
-					if(val_tipo == 'representantes'){
-						jQuery.each(representantes, function (key, val) {
-							if((val.uf == val_estado) && (val.categoria.toLowerCase() == val_tipo)) {
-								list_representantes += '<li>';
-								list_representantes += '<h3>'+val.nome+'</h3><div class="content-txt">';
-
-								if(val.email != ''){
-									list_representantes += '<span class="email"><strong>E-mail</strong>'+val.email+'</span>'
-								}
-
-								if(val.telefone != ''){
-									list_representantes += '<span><strong>Telefone</strong>'+val.telefone+'</span>'
-								}
-
-								if(val.celular != ''){
-									list_representantes += '<span><strong>Celular</strong>'+val.celular+'</span>'
-								}
-
-								if(val.endereco != ''){
-									list_representantes += '<span><strong>Endereço</strong>'+val.endereco+', '+val.numero+', '+val.bairro+'</span>'
-								}
-
-								if(val.cidade != ''){
-									list_representantes += '<span><strong>Cidade</strong>'+val.cidade+', '+val.estado+'</span>'
-								}
-
-								list_representantes += '</div></li>';
-							}
-						});
-					}
-
-					if(val_tipo == 'lojas'){
-						jQuery.each(lojas, function (key, val) {
-							if((val.uf == val_estado) && (val.categoria.toLowerCase() == val_tipo)) {
-								list_representantes += '<li>';
-								list_representantes += '<h3>'+val.nome+'</h3><div class="content-txt">';
-
-								if(val.email != ''){
-									list_representantes += '<span class="email"><strong>E-mail</strong>'+val.email+'</span>'
-								}
-
-								if(val.telefone != ''){
-									list_representantes += '<span><strong>Telefone</strong>'+val.telefone+'</span>'
-								}
-
-								if(val.celular != ''){
-									list_representantes += '<span><strong>Celular</strong>'+val.celular+'</span>'
-								}
-
-								if(val.endereco != ''){
-									list_representantes += '<span><strong>Endereço</strong>'+val.endereco+', '+val.numero+', '+val.bairro+'</span>'
-								}
-
-								if(val.cidade != ''){
-									list_representantes += '<span><strong>Cidade</strong>'+val.cidade+', '+val.estado+'</span>'
-								}
-
-								list_representantes += '</div></li>';
-							}
-						});
-					}
-				}
-				
-				jQuery('.list-representantes').html(list_representantes);
-			}
-
-			jQuery('.list-representantes').html(list_representantes);
-			jQuery('.map li a').removeClass('active');
-			jQuery('.map li a.'+val_estado_map).addClass('active');
-		});
-
-		jQuery('input').change(function(){
-			if(jQuery(this).parent().hasClass('erro')){
-				jQuery(this).parent().removeClass('erro');
-			}
-		});
-
-	})
-</script>
-*/ ?>
