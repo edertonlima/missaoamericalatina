@@ -67,8 +67,6 @@
 	</div>
 </section>
 
-
-
 <section class="box-content box-mensagem no-height">
 	<div class="container">
 		
@@ -165,6 +163,61 @@
 	</div>
 </section>
 
+<section class="box-content no-height amarelo envolvase envolvase-home">
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-12">
+				<h2 class="center">Oferte</h2>
+				<h4 class="center">Seja a diferença! Faça a sua doação</h4>
+
+				<ul class="doacao">
+					<li class="">
+						<div class="cont">
+							<div class="middle">
+								<h2>quero doar</h2>
+								<span>R$ 10</span>
+							</div>
+						</div>
+					</li>
+					<li class="active">
+						<div class="cont">
+							<div class="middle">
+								<h2>quero doar</h2>
+								<span>R$ 50</span>
+							</div>
+						</div>
+					</li>
+					<li class="">
+						<div class="cont">
+							<div class="middle">
+								<h2>quero doar</h2>
+								<span>R$ 100</span>
+							</div>
+						</div>
+					</li>
+					<li class="outro_valor">
+						<div class="cont">
+							<div class="middle">
+								<h2>outra quantia</h2>
+								<span><input type="text" class="real" id="outro_valor" name="outro_valor" placeholder="R$ 0"></span>
+							</div>
+						</div>
+					</li>
+					<li class="button-ofertar">
+						<a href="javascript:" class="button enviar ofertar">Ofertar!</a>
+					</li>
+				</ul>
+
+				<p class="center">
+					<a href="javascript:" class="button enviar">Desejo ser um parceiro mensal</a>
+					<span class="info-p">* Escolha uma quantia</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section class="box-content projetos" id="projetos">
 	<div class="container">
 		
@@ -187,10 +240,13 @@
 
 					<div class="item-proj">
 						<?php 
-							if(get_field('video')){ ?>
+							if(get_field('video')){ 
 
-								<iframe class="col-6 img-projeto" src="https://www.youtube.com/embed/7suPXnzQ770" frameborder="0" encrypted-media" allowfullscreen></iframe>
-								<div class="col-6 img-projeto" style="background-image: url('https://img.youtube.com/vi/7suPXnzQ770/maxresdefault.jpg');">
+								$val_video = explode('embed/', get_field('video'));
+								$val_video = explode('?', $val_video[1])[0]; ?>
+
+								<iframe class="col-6 img-projeto" src="https://www.youtube.com/embed/<?php echo $val_video; ?>" frameborder="0" encrypted-media" allowfullscreen></iframe>
+								<div class="col-6 img-projeto" style="background-image: url('https://img.youtube.com/vi/<?php echo $val_video; ?>/maxresdefault.jpg');">
 									<i class="fa fa-youtube-play" aria-hidden="true"></i>
 								</div>
 
@@ -231,8 +287,7 @@
 			)
 		);
 
-		while ( have_posts() ) : the_post();
-		?>
+		while ( have_posts() ) : the_post(); ?>
 
 			<section class="item box-content no-padding treinamentos" style="background-image: url('<?php the_field('imagem_block'); ?>');">
 				<div class="box-treinamentos">
@@ -245,10 +300,13 @@
 										<div class="item-slide-treinamentos">
 
 						<?php 
-							if(get_field('video')){ ?>
+							if(get_field('video')){ 
 
-								<iframe class="col-6 img-treinamentos" src="https://www.youtube.com/embed/7suPXnzQ770" frameborder="0" encrypted-media" allowfullscreen></iframe>
-								<div class="col-6 img-treinamentos" style="background-image: url('https://img.youtube.com/vi/7suPXnzQ770/maxresdefault.jpg');">
+								$val_video = explode('embed/', get_field('video'));
+								$val_video = explode('?', $val_video[1])[0]; ?>
+
+								<iframe class="col-6 img-treinamentos" src="https://www.youtube.com/embed/<?php echo $val_video; ?>" frameborder="0" encrypted-media" allowfullscreen></iframe>
+								<div class="col-6 img-treinamentos" style="background-image: url('https://img.youtube.com/vi/<?php echo $val_video; ?>/maxresdefault.jpg');">
 									<i class="fa fa-youtube-play" aria-hidden="true"></i>
 								</div>
 
@@ -423,6 +481,15 @@
 <script type="text/javascript">
 	jQuery(document).ready(function(){	
 
+		jQuery('.doacao li').click(function(){
+			jQuery('.doacao li').removeClass('active');
+			jQuery(this).addClass('active');
+
+			if(jQuery(this).hasClass('outro_valor')){
+				jQuery('#outro_valor').focus();
+			}
+		});
+
 		jQuery('.modal-igrejas-parceiras').click(function(){
 			jQuery('#modal-igrejas-parceiras').css('display','table');
 		});
@@ -528,15 +595,18 @@
 		navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
 		responsive: {
 			0: {
-				items: 2
+				items: 1
 			},
 			400: {
+				items: 1
+			},
+			600: {
 				items: 2
 			},
-			500: {
+			800: {
 				items: 3
 			},
-			768: {
+			1200: {
 				items: 4
 			}
 		}
@@ -560,5 +630,8 @@
 <script type="text/javascript">
 	jQuery(function($){
 	   jQuery(".telefone").mask("(99) 9999-9999?9");
+
+	   jQuery.mask.definitions['d'] = '[0-9.]';
+	   jQuery('.real').mask('R$ 9?ddddd', ' ');
 	});
 </script>

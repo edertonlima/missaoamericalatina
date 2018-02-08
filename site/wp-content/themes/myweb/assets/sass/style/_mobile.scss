@@ -1,87 +1,135 @@
-@media all and (max-width: 1100px){
-	.nav {
-		ul {
-			li {
-				.submenu {
-					a {
-						font-size: .8rem;
-						font-weight: $regular;
+@media all and (max-width: 1200px){
+	#igrejas-parceiras {
+		height: auto;
+		min-height: auto;
 
-						img {
-							height: 40px;
-						}
-					}
-				}
+		.mask-content-item {
+			height: auto;
+
+			.table, .table-cell {
+				margin: 0;
+				display: block;
+			}
+		}
+
+		.txt-sobre {
+			padding: 100px 40px;
+
+			h4 {
+				font-size: 3rem;
+				line-height: 3.5rem;
+			}
+
+			.list-igrejas {
+				margin: 50px 0 0;
 			}
 		}
 	}
-
-	.ico-info {
-		padding: 50px 10px 0!important;
-	}
 }
 
-@media all and (max-width: 960px){
-	.list-item {
-		&.list-produto {
-			li {
-				height: 380px!important;
-				width: 380px!important;
+@media all and (max-width: 1000px){
+	h4 {
+		font-size: 1.225rem;
+		line-height: 1.75rem;
+	}
+
+	p {
+		font-size: .875rem;
+		line-height: 1.225rem;
+	}
+
+	.sobre-home {
+		.txt-sobre {
+			h4 {
+				margin: 5px 0 0px
 			}
+		}
 
-			a {
-				height: 380px!important;
-				width: 380px!important;
-
-				.cont-list-item-box {
-					height: 380px!important;
-					span {
-						font-size: 1.225rem;
-						line-height: 1.5rem;
-					}
-					p {
-						display: none;
-					}
+		&.item-mini {
+			.item-sobre {
+				h4 {
+					font-size: 2rem;
+					line-height: 1.5rem;
 				}
 			}
+		}
+
+		&.sobre-btn-det {
+			padding: 50px 15px;
+		}
+	}
+
+	.projetos .list-projeto .cont-proj .box-cont-proj p {
+		max-height: 102px;
+	}
+
+	.envolva-se {
+		height: auto;
+		min-height: 0!important;
+
+		h4 {
+			font-size: 2rem!important;
+			line-height: 1.5rem!important;
+		}
+
+		.col-5 {
+			width: 100%!important;
+			height: auto!important;
+
+			h4 {
+				margin-top: 15px;
+			}
+		}
+
+		.col-7 {
+			width: 100%!important;
+		}
+
+		.item-sobre:not(.active) {
+			border: 1px solid #ffffff;
 		}
 	}
 }
 
 @media all and (max-width: 900px){
-	.contato {
-		margin: 0 !important;
-		.col-6 {
-			width: 100%!important;
-		}
-	}
-
-	.endereco {
-		padding-top: 0;
-		.col-6 {
-			width: 100%;
-
-			&:last-child {
-				margin-top: 30px;
+	.envolvase {
+		.doacao {
+			li {
+				width: 100%;
 			}
 		}
 	}
 
-	.box-content {
-		.cont-box.ico-cont {
-			&.itens_detalhes {
-				.box-distancia {
-					padding-right: 20px;
+	.projetos {
+		.list-projeto {
+			.item-proj {
+				max-width: 500px;
+				margin: 0px auto 0px;
+				float: none;
+				display: block;
 
-					.col {
-						width: 100%;
-						max-width: 400px;
-						margin: 0;
-						clear: both;
+				&:nth-child(2n+1) {
+					text-align: left;
+				}
 
-						&:last-child {
-							margin-top: 20px;
-							max-width: 100%;
+				.col-6 {
+					width: 100%;
+
+					&.cont-proj {
+						margin-bottom: 40px;
+						height: auto;
+						background-color: rgba($amarelo,0.75);
+
+						.box-cont-proj {
+							padding: 20px 0;
+						}
+					}
+				}
+
+				&:last {
+					.col-6 {
+						&.cont-proj {
+							margin-bottom: 0;
 						}
 					}
 				}
@@ -89,539 +137,224 @@
 		}
 	}
 
-	.corte-carne {
-		padding: 30px 20px;
-	}
-
-	.itens_corte_carneprimeira {
-		padding: 0!important;
-
-		.col-6 {
-			width: 100%;
-			float: none;
-			display: block;
-			max-width: 400px;
-			margin: 0 auto 60px;
-			padding: 0 !important;
-			overflow: hidden;
-		}
-	}
-}
-
-@media all and (max-width: 830px){
-	.churrascometro {
-		.qtd_pessoas {
-			.cont {
-				display: block;
-				margin-top: 5px;
+	.treinamentos {
+		.cont-treinamentos {
+			h4 {
+				margin-bottom: 5px;
 			}
 		}
 	}
 }
 
-@media all and (max-width: 800px){
-	.ico-info {
-		padding: 0!important;
-		margin-top: 50px;
-		width: 100%;
-		text-align: center;
+@media all and (max-width: 730px){
+	.idiomas {
+		display: none;
+		top: 85px;
+		z-index: 9999;
+		margin: 0 0 0 -103px;
+		width: 206px;
+		left: 50%;
 
-		img, .tit-ico {
-			float: none;
-		}
-	}
-}
-
-
-@media all and (max-width: 700px){
-	.contato {
-		padding: 30px;
-	}
-
-	.endereco {
-		.col-6 {
-			margin-top: 30px;
+		&.active {
+			display: block;
 		}
 	}
 
 	h1 {
-		margin: 5px 0 0;
-		max-width: 160px;
+		max-width: 130px;
 	}
 
-	.nav {
-		ul {
-			> li:not(.menu-home) {
-				display: none;
-			}
+	.container {
+		padding: 0 20px;
+	}
 
-			li.menu-home {
-				position: fixed;
-				top: 7px;
-				padding: 0;
-				left: 25px;
-				margin: 0!important;
+	.header {
+		.logo-mevam {
+			img {
+				max-height: 59px;
 			}
 		}
 	}
 
 	.menu-mobile {
-		display: block;
+		top: 8px;
+		right: 110px;
 	}
 
-	.header {
-		height: 100px;
+	.nav {
+		width: 100%;
+		top: 75px;
+		padding-top: 55px;
 
-		&.active {
-			height: 100vh;
-
-			.nav {
-				width: 100%;
-				display: table;
-				height: 100vh;
-				padding-top: 80px;
-
-				> ul {
-					display: table-cell;
-					vertical-align: middle;
-
-					> li:not(.menu-home) {
-						text-align: center;
-						float: none;
-						display: block;
-						width: 100%;
-						height: auto;
-						top: 0;
-						margin: 0;
-						padding: 0px 0 15px;
-
-						a {
-							display: inline-block;
-							font-size: 2rem;
-							line-height: 3rem;
-
-							&:hover {
-								background: transparent;
-								color: $verde-limao;
-							}
-						}
-
-						&:hover {
-							background: transparent;
-
-							ul {
-								display: block;
-							}
-						}
-					}
-				}
-
-				ul {
-					li {
-						margin-top: 10px;
-
-						ul {
-							display: block;
-							position: relative;
-							top: 12px;
-							height: auto;
-
-							li {
-								display: inline-block;
-								height: auto;
-								padding: 0;
-								margin: 0;
-
-								img {
-									display: none;
-								}
-								a {
-									display: block;
-									font-size: 1.225rem!important;
-									line-height: 2rem!important;
-									padding: 10px;
-								}
-							}
-						}
-
-						&.active {
-							background-color: transparent;
-							> a {
-								display: block;
-								color: #fff;
-								background-color: $verde-limao;
-								height: 50px;
-								line-height: 54px;
-							}
-
-							ul {
-								li {
-									&.active {
-										a {
-											background-color: transparent;
-											color: $verde-limao;
-										}
-									}
-								}
-							}
-						}
-
-						&:hover {
-							&.active {
-								background-color: transparent;
-								> a {
-									color: #fff;
-									background-color: $verde-limao;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	.box-content {
-		.list-item {
-			.col-6 {
-				width: 100%;
-
-				img {
-					max-height: 60px;
-				}
-			}
-
-			a, a .cont-list-item-box {
-				height: 50vh;
-			}
-		}
-	}
-
-	.tit-page-child {
-		span {
-			font-size: 1.5rem;
-			line-height: 26px;
-			padding: 15px 0;
-
-			&.single-produtos {
-				margin-top: -12px;
-				padding-bottom: 13px;
-				padding-top: 0px;
-			}
-		}
-	}
-
-	ul.map {
-		display: none!important;
-	}
-
-	.list-representantes {
-		margin-top: 50px;
-	}
-
-	.select-comprar {
-		margin-top: 35px;
-	}
-
-	.representantes {
-		.list-representantes {
+		ul {
 			li {
+				margin-bottom: 10px;
+
+				a {
+					font-size: 1.5rem;
+					line-height: 2rem;
+				}
+			}
+		}
+	}
+
+	.sobre-home {
+		&.item-mini {
+			.item-sobre {
+				width: 50%;
+				height: 70px !important;
+
+				.button {
+					display: none;
+				}
+			}
+		}
+
+		&.sobre-btn-det {
+			padding: 5px;
+			max-width: 450px;
+			margin: 20px auto 0;
+
+			img {
 				width: 100%;
-				padding: 0;
+				margin: 15px 0 15px;
+			}
+
+			.txt-sobre {
+				margin-bottom: 15px;
+			}
+
+			.col-4, .col-8 {
+				width: 100%;
 			}
 		}
 	}
 
-	h2 {
-		line-height: 60px;
-		margin-top: 100px;
+	.treinamentos {
+		height: auto;
+		min-height: 0px;
 
-		img {
-			display: none;
-		}
-
-		span {
-			font-size: 2rem;
-		}
-	}
-
-	.footer {
-		text-align: center;
-
-		.logo_footer, .tel_footer, .redes, .di20 {
-			float: none;
-			clear: both;
-			text-align: center;
+		.box-treinamentos {
 			height: auto;
-		}
+			padding: 25px 0;
 
-		.logo_footer, .redes {
-			border: 0;
-		}
-
-		.di20 {
-			margin: 10px auto 0;
-			display: block;
-			width: 100%;
-		}
-
-		.tel_footer, .redes {
-			display: inline-block;
-		}
-
-		.logo_footer {
-			width: 170px;
-			display: block;
-			margin: 0 auto 20px;
-		}
-
-		.di20 {
-			margin-top: 20px;
-			a {
-				display: inline-block;
-			}
-		}
-	}
-
-	.comprometimento {
-		li {
-			width: 100%!important;
-			text-align: center;
-			margin-bottom: 50px;
-			padding: 0 50px;
-
-			span {
-				font-size: 1rem;
-				line-height: 1.225rem;
-			}
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
-	}
-
-	h3 {
-		padding-left: 46px;
-		font-size: 1.5rem;
-	}
-
-	.box-content {
-		.cont-box.ico-cont {
-			padding: 20px;
-
-			&.itens_detalhes {
-				padding: 40px 20px;
+			.slide-treinamento {
+				height: auto;
 			}
 		}
 
-		.img-ico-cont {
-			top: -46px;
-			left: 20px;
-			max-width: 100%;
-			max-height: 35px;
-		}
-
-		p {
-			padding: 0!important;
-		}
-	}
-
-	.itens_descricao {
-		padding: 0!important;
-		li {
-			width: 100%!important;
-		}
-	}
-
-	.itens_cortes {
-		img {
-			padding: 0!important;
-			width: 60%!important;
-		}
-
-		.itens_cortes_txt {
-			width: 30%!important;
-		}
-	}
-
-	.itens_combinacoes {
-		li {
-			margin-bottom: 40px;
-			text-align: center;
-			overflow: hidden;
+		.img-treinamento {
 			
-			.itens {
-				width: 40%;
-				min-height: 0;
-				&.mais {
-					width: 20px;
-				}
-				&.box-combinacoes {
-					margin-top: 20px;
-					float: left;
-					display: block;
-					width: 100%;
-					text-align: left;
-				}
-			}
-		}
-	}
-
-	.ico-page img {
-		margin-top: 10px;
-	}
-
-	.select-comprar {
-		.col-4 {
-			width: 100%;
-
-			&.select-estado {
-				.select {
-					margin: 10px 0;
-				}
-			}
-		}
-	}
-
-	#resultado {
-		.resultado {
-			padding: 20px 10px 50px;
-		}
-	}
-
-	.corte-carne {
-		li {
-			width: 50%!important;
-
-			&:nth-child(3n+1){
-				clear: none!important;
-			}
-		}
-	}
-
-	.distancia-bottom {
-		padding: 0!important;
-	}
-}
-
-@media all and (max-width: 550px){
-	.contato {
-		padding: 0px;
-	}
-
-	.churrascometro {
-		.qtd_pessoas {
-			img {
-				display: block;
-				margin: 0 auto 5px;
-			}
-		}
-	}
-
-	.distancia-bottom {
-		margin: 0!important;
-		li {
-			width: 100%!important;
-			padding: 0!important;
-		}
-	}
-}
-
-@media all and (max-width: 450px){
-	.ico-info {
-		img, .tit-ico {
-			display: block;
-			margin: 0 auto;
-		}
-	}
-
-	#resultado {
-		.resultado {
-			.item {
-				padding: 7px;
-
-				.cont-result {
-					position: relative;
-					top: 0;
-					margin: 0;
-					right: 0;
-					display: block;
-				}
-			}
-		}
-	}
-
-	.churrascometro {
-		.qtd_pessoas {
-			width: 100%;
-			margin-bottom: 50px;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-
-			img {
-				display: inline-block;
-				margin: 0 10px 0 0;
-			}
-
-			.cont {
-				display: inline-block;
-				margin: 0;
-			}
-		}
-	}
-
-	.corte-carne {
-		li {
-			width: 100%!important;
-		}
-	}
-
-	.itens_cortes {
-		img {
-			width: 100%!important;
 		}
 
-		.itens_cortes_txt {
-			width: 100%!important;
-			margin: 20px 0 0 0!important;
-		}
-	}
+		.cont-treinamentos {
 
-	.endereco {
-		padding: 0!important;
-		margin: 0!important;
-
-		i {
-			font-size: 2.5rem;
 		}
 
 		.col-6 {
-			padding: 0!important;
-			margin-left: 0!important;
+			width: 100%;
+		}
+	}
+
+	.treinamentos .img-treinamentos {
+		height: 40vh!important;
+	}
+
+	.treinamentos .cont-treinamentos {
+		height: auto!important;
+	}
+
+	.footer {
+		height: auto!important;
+		min-height: 0!important;
+
+		.mask {
+			height: auto!important;
+			min-height: 0!important;
+			padding-bottom: 20px !important;
+		}
+
+		.col-6 {
+			width: 100%;
+			text-align: center;
+
+			h1 {
+				float: none;
+				display: block;
+				margin: 30px auto;
+				max-width: 200px;
+			}
+		}
+
+		.box-info-contato .info-contato .item {
+			width: 100%;
+		}
+
+		.box-info-contato .info-contato .item span {
+			text-align: center;
+		}
+
+		.redes {
+			width: 100%;
+		}
+	}
+
+	.page {
+		.content-post {
+			.col-4, .col-8 {
+				width: 100%;
+			}
+
+			.col-4 {
+				margin-bottom: 20px;
+			}
+		}
+
+		.content-post {
+			.sobre-home {
+				display: block;
+				max-width: 500px;
+				margin: 0 auto;
+
+				.col-4 {
+					img {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	.page .box-content.header-page {
+		height: 100px;
+
+		.mask {
+			height: 100px;
+
+			.container {
+				height: 100px;
+
+				div {
+					display: none;
+				}
+			}
 		}
 	}
 }
 
-
-@media all and (max-width: 400px){
-	.list-item {
-		&.list-produto {
-			li {
-				height: 300px!important;
-				width: 300px!important;
+@media all and (max-width: 500px){
+	.sobre-home {
+		&.item-mini {
+			.item-sobre {
+				width: 100%;
+				height: 70px !important;
 			}
+		}
+	}
 
-			a {
-				height: 300px!important;
-				width: 300px!important;
-
-				.cont-list-item-box {
-					height: 300px!important;
-				}
-			}
+	.envolva-se {
+		.item-sobre:not(.active) {
+			width: 100%;
 		}
 	}
 }

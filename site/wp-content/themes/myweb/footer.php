@@ -55,42 +55,6 @@
 
 
 	<footer class="box-content no-padding footer" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/img5.jpg');">
-		<div class="container" style="display: none;">
-			<div class="row">
-
-				<img src="<?php the_field('logo_header', 'option'); ?>" alt="<?php the_field('titulo', 'option'); ?>" class="logo_footer">
-
-				<?php /*<div class="tel_footer">
-					<div>
-						<span><?php the_field('telefone_1', 'option'); ?></span>
-						<?php
-							if(get_field('telefone_2', 'option')){ ?>
-								<span><?php the_field('telefone_2', 'option'); ?></span>
-							<?php }
-						 ?>
-					</div>
-				</div>
-
-				<?php if( have_rows('redes_sociais','option') ): ?>
-					<div class="redes">						
-						<?php while ( have_rows('redes_sociais','option') ) : the_row(); ?>
-							<a href="<?php the_sub_field('url','option'); ?>" title="<?php the_sub_field('nome','option'); ?>" target="_blank">
-								<img src="<?php the_sub_field('icone','option'); ?>" alt="<?php the_field('nome', 'option'); ?>">
-							</a>
-						<?php endwhile; ?>
-					</div>
-				<?php endif; ?>
-
-				<div class="di20">
-					<a href="http://www.di20.com" target="_blank">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/di20.png">
-					</a>
-				</div>*/ ?>
-				
-			</div>
-		</div>
-
-
 		<div class="mask">
 			<div class="container table">
 				<div class="table-cell">
@@ -100,9 +64,6 @@
 						<div class="col-6">
 							<h1>
 								<a href="<?php echo get_home_url(); ?>" title="<?php the_field('titulo', 'option'); ?>">
-									<?php /*
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php the_field('titulo', 'option'); ?>">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-br.png" alt="<?php the_field('titulo', 'option'); ?>"> */?>
 									<img src="<?php the_field('logo_header', 'option'); ?>" alt="<?php the_field('titulo', 'option'); ?>">
 								</a>
 							</h1>
@@ -117,35 +78,27 @@
 									<div class="item">
 										<span class="det-item">
 											<i class="fa fa-envelope" aria-hidden="true"></i>
-											<a href="mailto:contato@mevam.org.br">contato@mevam.org.br</a>
+											<a href="mailto:<?php the_field('email', 'option'); ?>"><?php the_field('email', 'option'); ?></a>
 										</span>
 									</div>
 								</div>
 
 								<div class="info-contato info-tel">
 									<div class="item">
-										<span class="det-item"> <i class="fa fa-phone" aria-hidden="true"></i> +1 704 587-1151</span>
+										<span class="det-item"> <i class="fa fa-phone" aria-hidden="true"></i><?php the_field('telefone_1', 'option'); ?></span>
 									</div>
 								</div>
 							</div>
 
-							<?php //if( have_rows('redes_sociais','option') ): ?>
+							<?php if( have_rows('redes_sociais','option') ): ?>
 								<div class="redes">						
-									<?php /* //while ( have_rows('redes_sociais','option') ) : the_row(); ?>
+									<?php while ( have_rows('redes_sociais','option') ) : the_row(); ?>
 										<a href="<?php the_sub_field('url','option'); ?>" title="<?php the_sub_field('nome','option'); ?>" target="_blank">
-											<img src="<?php the_sub_field('icone','option'); ?>" alt="<?php the_field('nome', 'option'); ?>">
+											<?php the_sub_field('icone','option'); ?>
 										</a>
-									<?php //endwhile; */ ?>
-
-									<a href="javascript:">
-										<i class="fa fa-facebook" aria-hidden="true"></i>
-									</a>
-
-									<a href="javascript:">
-										<i class="fa fa-instagram" aria-hidden="true"></i>
-									</a>
+									<?php endwhile; ?>
 								</div>
-							<?php //endif; ?>
+							<?php endif; ?>
 						</div>
 
 					</div>

@@ -110,6 +110,25 @@ input[type='submit'], .button {
 		}
 	}
 
+	&.ofertar {
+		background-color: lighten($verde, 10%);
+		line-height: 150px;
+		font-size: 1.5rem;
+		color: #ffffff;
+		display: block;
+		height: 150px;
+		border: none;
+
+		i {
+			color: #ffffff;
+		}
+
+		&:hover {
+			background-color: $verde;
+		}
+	}
+
+
 	&.btn-igreja {
 		background-color: $verde;
 		color: #ffffff;

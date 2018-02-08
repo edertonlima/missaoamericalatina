@@ -15,10 +15,13 @@
 
 					<div class="row">
 						<?php 
-							if(get_field('video')){ ?>
+							if(get_field('video')){ 
 
-								<iframe class="col-4 img-projeto" src="https://www.youtube.com/embed/7suPXnzQ770" frameborder="0" encrypted-media" allowfullscreen></iframe>
-								<div class="col-4 img-projeto" style="background-image: url('https://img.youtube.com/vi/7suPXnzQ770/maxresdefault.jpg');">
+								$val_video = explode('embed/', get_field('video'));
+								$val_video = explode('?', $val_video[1])[0]; ?>
+
+								<iframe class="col-4 img-projeto" src="https://www.youtube.com/embed/<?php echo $val_video; ?>" frameborder="0" encrypted-media" allowfullscreen></iframe>
+								<div class="col-4 img-projeto" style="background-image: url('https://img.youtube.com/vi/<?php echo $val_video; ?>/maxresdefault.jpg');">
 									<i class="fa fa-youtube-play" aria-hidden="true"></i>
 								</div>
 

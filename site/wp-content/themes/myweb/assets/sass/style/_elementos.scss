@@ -41,6 +41,7 @@ h4 {
 	font-weight: $bold;
 	font-size: 1.75rem;
 	line-height: 2.5rem;
+	color: $cor-txt;
 }
 
 h5 {
@@ -55,6 +56,7 @@ p {
 	line-height: $font-size+.7;
 	font-weight: $regular;
 	margin-bottom: 20px;
+	color: $cor-txt;
 
 	&.mini {
 		font-size: 1rem;
@@ -72,6 +74,12 @@ p {
 		line-height: 1rem;
 		max-width: 510px;
 		margin: 0 auto;
+	}
+
+	.info-p {
+		font-size: .75rem;
+		display: block;
+		line-height: 2rem;
 	}
 	
 	@media all and (max-width: 770px){

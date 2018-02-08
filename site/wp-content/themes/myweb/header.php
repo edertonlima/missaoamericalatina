@@ -5,6 +5,15 @@
 <?php 
 	$titulo_princ = get_field('titulo', 'option');
 	$descricao_princ = get_field('descricao', 'option');
+	
+	$keywords = get_field('palavras_chave', 'option');
+	if(get_field('keywords')){
+		$keywords = $keywords.', '.get_field('keywords');
+	}
+
+	$titulo = get_the_title();
+	$descricao = get_the_excerpt();
+	
 	$imagem_princ = get_field('imagem_principal', 'option');
 	$url = get_home_url();
 	$imgPage = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '' );
@@ -34,7 +43,7 @@
 		$url = get_the_permalink();
 	}
 
-	if($titulo == ''){
+	if(($titulo == '') or ($titulo == 'Home')){
 		$titulo = $titulo_princ;
 	}else{
 		$titulo = $titulo.' - '.$titulo_princ;
@@ -44,7 +53,7 @@
 		$descricao = $descricao_princ;
 	}
 
-	$autor = 'Di20 Desenvolvimento';
+	$autor = 'ULTIMATE! tecnologia e design, atendimento@ultimate.com.br';
 ?>
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -54,7 +63,7 @@
 <meta http-equiv="content-language" content="pt" />
 <meta name="rating" content="General" />
 <meta name="description" content="<?php echo $descricao; ?>" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="<?php echo $keywords; ?>" />
 <meta name="robots" content="index,follow" />
 <meta name="author" content="<?php echo $autor; ?>" />
 <meta name="language" content="pt-br" />
@@ -106,17 +115,18 @@
 		jQuery('.menu-mobile').click(function(){
 			if(jQuery(this).hasClass('active')){
 				//jQuery('.nav').css('top','-100vh');
-				//jQuery(this).removeClass('active');
+				jQuery('.idiomas').removeClass('active');
 				jQuery('.nav').removeClass('active');
 			}else{
 				//jQuery('.nav').css('top','0px');
-				//jQuery(this).addClass('active');
+				jQuery('.idiomas').addClass('active');
 				jQuery('.nav').addClass('active');
 			}
 		});
 
 		jQuery('.nav a').click(function(){
 			jQuery('.nav').removeClass('active');
+			jQuery('.idiomas').removeClass('active');
 		});
 
 		if(jQuery('body').height() <= jQuery(window).height()){
@@ -134,6 +144,7 @@
 	jQuery(window).resize(function(){
 		//jQuery('.menu-mobile').removeClass('active');
 		jQuery('.nav').removeClass('active');
+		jQuery('.idiomas').removeClass('active');
 		//jQuery('.nav').css('top','-100vh');
 		if(jQuery('body').height() <= jQuery(window).height()){
 			jQuery('.footer').css({position: 'absolute', bottom: '0px'});
@@ -152,23 +163,28 @@
 	});
 </script>
 
-<?php /*
-<!-- ZOPIM -->
-<!--Start of Zendesk Chat Script-->
-<script type="text/javascript">
-window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-$.src="https://v2.zopim.com/?4wUPiAqqUPHLIihFTiGQt2Su4HknexxE";z.t=+new Date;$.
-type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-</script>
-
-<!-- SUMO -->
-<script src="//load.sumome.com/" data-sumo-site-id="0820f5828ba5ae1d27edd8bde6d74989a0ddbfa73cad0af4f62420486d84f071" async="async"></script>
-*/ ?>
+<!-- CHAT -->
+<?php 
+	if(get_field('chat', 'option')){
+		the_field('chat', 'option');
+	}
+?>
+<!-- CHAT -->
 
 </head>
 <body <?php body_class(); ?>>
+
+	<?php if(get_field('analytics', 'option')){ ?>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', '<?php the_field('analytics', 'option'); ?>', 'auto');
+			ga('send', 'pageview');
+		</script>
+	<?php } ?>
 
 	<header class="header">
 		<div class="container">
@@ -180,6 +196,10 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<img src="<?php the_field('logo_header', 'option'); ?>" alt="<?php the_field('titulo', 'option'); ?>">
 				</a>
 			</h1>
+
+			<div class="idiomas">
+				<?php echo do_shortcode('[gtranslate]'); ?>
+			</div>
 
 			<i class="fa fa-bars menu-mobile" aria-hidden="true"></i>
 

@@ -6,7 +6,7 @@
 
 	.mask {
 		background-color: rgba($amarelo,0.5);
-		height: 100vh;
+		min-height: 100vh;
 
 		.table {
 			padding-top: 100px;
@@ -109,7 +109,7 @@
 				bottom: -5px;
 				left: 50%;
 				margin-left: -50px;
-				z-index: 999;
+				z-index: 9;
 			}
 		}
 	}
@@ -186,7 +186,7 @@
 
 			&.igrejas-parceiras {
 				position: relative;
-				padding: 100px;
+				//padding: 100px;
 
 				h4 {
 					color: $verde;

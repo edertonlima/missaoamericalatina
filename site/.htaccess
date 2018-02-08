@@ -10,3 +10,5 @@ RewriteRule . /missaoamericalatina/site/index.php [L]
 </IfModule>
 
 # END WordPress
+# BEGIN Audiobar
+# END Audiobar
