@@ -72,8 +72,10 @@
 		
 		<div class="row list-projeto">
 			<div class="col-12">
-				<h2 class="center">Mateus 4:17</h2>
-				<h4 class="center">Arrependei-vos porque é chegado o reino dos céus</h4>
+				<?php if(get_field('versiculo','option')){ ?>
+					<h2 class="center"><?php the_field('versiculo','option'); ?></h2>
+				<?php } ?>
+				<h4 class="center"><?php the_field('texto_versiculo','option'); ?></h4>
 			</div>
 		</div>
 	</div>
@@ -218,7 +220,7 @@
 	</div>
 </section>
 
-<section class="box-content projetos" id="projetos">
+<section class="box-content projetos no-height" id="projetos">
 	<div class="container">
 		
 		<div class="row list-projeto">

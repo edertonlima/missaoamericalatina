@@ -128,6 +128,12 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'Envolva-se',
 		'parent_slug'	=> 'configuracoes-geral',
 	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Home',
+		'menu_title'	=> 'Home',
+		'parent_slug'	=> 'configuracoes-geral',
+	));
 }
 
 /* PAGINAÇÃO */
